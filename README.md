@@ -9,20 +9,18 @@ PM 이예솔 | yesol4138@chungbuk.ac.kr
 <br>
 
 ### 👥 Team
-<table> <tr> <td align="center"> <a href="https://github.com/suyeonb"><img src="https://github.com/suyeonb.png" width="100px;" alt="이예솔 프로필"/><br /><sub><b>이예솔</b><br />PM / FE</sub></a> </td> <td align="center"> <a href="https://github.com/kdm0927"><img src="https://github.com/kdm0927.png" width="100px;" alt="김다민 프로필"/><br /><sub><b>김다민</b><br />FE / FE</sub></a> </td> <td align="center"> <a href="https://github.com/ieeyesoi"><img src="https://github.com/ieeyesoi.png" width="100px;" alt="조재영 프로필"/><br /><sub><b>조재영</b><br />디자인 / FE</sub></a> </td> <td align="center"> <a href="https://github.com/jaeyeo0ng"><img src="https://github.com/jaeyeo0ng.png" width="100px;" alt="허채민"/><br /><sub><b>허채민</b><br />BE</sub></a> </td> </tr> </table>
+<table> <tr> <td align="center"> <a href="https://github.com/ieeyesoi"><img src="https://github.com/ieeyesoi.png" width="100px;" alt="이예솔 프로필"/><br /><sub><b>이예솔</b><br />PM / FE</sub></a> </td> <td align="center"> <a href="https://github.com/kdm0927"><img src="https://github.com/kdm0927.png" width="100px;" alt="김다민 프로필"/><br /><sub><b>김다민</b><br />FE / FE</sub></a> </td> <td align="center"> <a href="https://github.com/jaeyeongt"><img src="https://github.com/jaeyeongt.png" width="100px;" alt="조재영 프로필"/><br /><sub><b>조재영</b><br />디자인 / FE</sub></a> </td> <td align="center"> <a href=""><img src="" width="100px;" alt="허채민"/><br /><sub><b>허채민</b><br />BE</sub></a> </td> </tr> </table>
 
 ### 📝 Purpose
 충북대학교 소프트웨어학부 학생들이 흩어진 정보를 한곳에서 확인하고 <br>
 소통 및 협업을 원활히 할 수 있도록 지원하는 통합 웹 플랫폼 <br>
 
 ### 🛠️ Tools
-![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white) ![html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![css](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white) ![html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![css](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) 
 
-![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white) ![flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white) ![kotlin](https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white)
+![figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white) ![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 
-![androidstudio](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) ![unity](https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white)
-
-![notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white) 🔹 Notion 프로젝트 페이지 [notionlink](https://www.notion.so/AI-1fddd2128ec480a8ae75e2b56fd802d8?pvs=4)
+![notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white) Notion 프로젝트 페이지 [notionlink](https://www.notion.so/AI-1fddd2128ec480a8ae75e2b56fd802d8?pvs=4)
 <br>
 <br></br>
 ## 🤝 GitHub 협업 전략
@@ -72,7 +70,7 @@ PM 이예솔 | yesol4138@chungbuk.ac.kr
 
 ---
 
-### 📌 커밋 & PR 규칙
+### 💻 커밋 & PR 규칙
 
 - **의미 있는 커밋 메시지 작성**을 권장합니다.
   - 예: `feat: 리소스 페이지 UI 구현`, `fix: 버튼 정렬 오류 수정`
@@ -80,7 +78,7 @@ PM 이예솔 | yesol4138@chungbuk.ac.kr
 
 ---
 
-### 📚 예시 워크플로우
+### 🧭 예시 워크플로우
 
 ```bash
 # 1. 브랜치 생성 (최초 1회)
