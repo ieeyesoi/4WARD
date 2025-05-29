@@ -1,7 +1,7 @@
 ![venom](https://capsule-render.vercel.app/api?type=venom&height=200&text=4%20WARD%20&fontSize=70&color=0:8871e5,100:b678c4&stroke=b678c4)
 
 🔹CBNU SW 포털 (충북대학교 소프트웨어학부 통합 웹 플랫폼) <br>
-🔹CBNU SoftWare portal
+🔹CBNU Software portal
 <br>
 ### 📬 Contact
 ![mailcontact](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white) <br>
