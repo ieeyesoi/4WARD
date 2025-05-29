@@ -9,7 +9,7 @@ PM 이예솔 | yesol4138@chungbuk.ac.kr
 <br>
 
 ### 👥 Team
-<table> <tr> <td align="center"> <a href="https://github.com/ieeyesoi"><img src="https://github.com/ieeyesoi.png" width="100px;" alt="이예솔 프로필"/><br /><sub><b>이예솔</b><br />PM / FE</sub></a> </td> <td align="center"> <a href="https://github.com/kdm0927"><img src="https://github.com/kdm0927.png" width="100px;" alt="김다민 프로필"/><br /><sub><b>김다민</b><br />FE / FE</sub></a> </td> <td align="center"> <a href="https://github.com/jaeyeongt"><img src="https://github.com/jaeyeongt.png" width="100px;" alt="조재영 프로필"/><br /><sub><b>조재영</b><br />디자인 / FE</sub></a> </td> <td align="center"> <a href=""><img src="" width="100px;" alt="허채민"/><br /><sub><b>허채민</b><br />BE</sub></a> </td> </tr> </table>
+<table> <tr> <td align="center"> <a href="https://github.com/ieeyesoi"><img src="https://github.com/ieeyesoi.png" width="100px;" alt="이예솔 프로필"/><br /><sub><b>이예솔</b><br />PM / FE</sub></a> </td> <td align="center"> <a href="https://github.com/kdm0927"><img src="https://github.com/kdm0927.png" width="100px;" alt="김다민 프로필"/><br /><sub><b>김다민</b><br />FE / FE</sub></a> </td> <td align="center"> <a href="https://github.com/jaeyeongt"><img src="https://github.com/jaeyeongt.png" width="100px;" alt="조재영 프로필"/><br /><sub><b>조재영</b><br />디자인 / FE</sub></a> </td> <td align="center"> <a href="https://github.com/coalsld"><img src="https://github.com/coalsld.png" width="100px;" alt="허채민"/><br /><sub><b>허채민</b><br />BE</sub></a> </td> </tr> </table>
 
 ### 📝 Purpose
 충북대학교 소프트웨어학부 학생들이 흩어진 정보를 한곳에서 확인하고 <br>
