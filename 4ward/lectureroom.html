@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>강의 정보 확인 (CBNU SW 포털)</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="lectureroom.css">
+  <!-- Google Maps JS API -->
+  <script
+    src="https://maps.googleapis.com/maps/api/testcode&language=ko"
+    defer
+  ></script>
+  <script src="lectureroom.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <a href="#" class="nav__item">Home</a>
+    <a href="/integ.html" class="nav__item active">통합 정보</a>
+    <a href="#" class="nav__item">커뮤니티</a>
+    <a href="#" class="nav__item">포트폴리오</a>
+    <a href="#" class="nav__item">About</a>
+    <div class="nav__user">000님</div>
+  </nav>
+
+  <main class="lecture-container">
+    <div class="tabs">
+      <button class="tab-btn active" data-type="major">전공</button>
+      <button class="tab-btn"      data-type="general">교양</button>
+    </div>
+
+    <div class="search-wrap">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="강의실 / 교수명 검색"
+      />
+    </div>
+
+    <div class="content">
+      <ul class="building-list" id="list"></ul>
+      <div class="map-view" id="map"></div>
+    </div>
+  </main>
+
+  <!-- 강의실 추가 폼 모달 -->
+  <div id="formContainer" class="form-container hidden">
+    <form id="addRoomForm" class="form">
+      <h2>강의실 추가</h2>
+
+      <label>
+        카테고리
+        <select id="categorySelect">
+          <option value="major">전공</option>
+          <option value="general">교양</option>
+        </select>
+      </label>
+
+      <label>
+        수업 이름
+        <input id="roomNameInput" type="text" required placeholder="수업 이름" />
+      </label>
+
+      <label>
+        교수명
+        <input id="profNameInput" type="text" required placeholder="교수명" />
+      </label>
+
+      <label>
+        강의동
+        <input id="buildingNumberInput" type="text" required placeholder="강의동" />
+      </label>
+
+      <label>
+        강의실
+        <input id="roomNumberInput" type="text" required placeholder="강의실" />
+      </label>
+
+      <div class="form__btns">
+        <button type="submit">저장</button>
+        <button type="button" id="cancelBtn">취소</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

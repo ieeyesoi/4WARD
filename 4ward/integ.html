@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>통합 정보</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet (지도) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-sA+4OYeH2FgkSuUQIO75UDjOvZW+3S26U3Wxj6uAn0I="
+    crossorigin=""
+  />
+  <!-- Chart.js (차트) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-QVYRnvE89NV9Os2wHS8YJ1jPvQUF8g1m0rnz30AkZbM="
+    crossorigin=""
+  ></script>
+</head>
+<body>
+  <nav class="nav">
+    <a href="#" class="nav__item">Home</a>
+    <a href="/integ.html" class="nav__item active">통합 정보</a>
+    <a href="#" class="nav__item">커뮤니티</a>
+    <a href="#" class="nav__item">포트폴리오</a>
+    <a href="#" class="nav__item">About</a>
+    <div class="nav__user">000님</div>
+  </nav>
+
+  <main class="container">
+    <!-- 카드 1: 지도 -->
+    <section class="card">
+      <header class="card__hdr"><h3>강의 정보 확인</h3></header>
+      <div id="map" class="card__body card__body--map"></div>
+      <footer class="card__ftr">
+        <a href="/lectureroom.html"><button class="btn">자세히 보기</button></a>
+      </footer>
+    </section>
+
+    <section class="card">
+    <header class="card__hdr"><h3>졸업 요건 점검</h3></header>
+    <div class="card__body card__body--chart">
+        <canvas id="gradChart"></canvas>
+    </div>
+    <footer class="card__ftr">
+        <a 
+        href="https://eisn.cbnu.ac.kr/nxui/index.html?OBSC_YN=0&LNG=ko#14295" 
+        class="btn" 
+        target="_blank" 
+        rel="noopener"
+        >
+        홈페이지 바로가기
+        </a>
+    </footer>
+    </section>
+    
+
+    <!-- 카드 3: 캘린더 -->
+    <section class="card">
+      <header class="card__hdr"><h3>D-DAY 일정 확인</h3></header>
+      <div class="card__body card__body--calendar">
+        <ul id="miniCal" class="mini-calendar"></ul>
+        <ul class="legend">
+          <li><span class="dot dot--hw"></span>과제</li>
+          <li><span class="dot dot--exam"></span>시험</li>
+        </ul>
+      </div>
+      <footer class="card__ftr">
+        <a href="/schedule.html">
+        <button class="btn">자세히 보기</button>
+        </a>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    // --- 1) 지도 초기화 (Leaflet) ---
+    document.addEventListener('DOMContentLoaded', () => {
+      const map = L.map('map', { scrollWheelZoom: false }).setView([36.6285, 127.4575], 13); // 중심 좌표와 확대 레벨 설정
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+      }).addTo(map);
+
+      // 마커 추가
+      const marker = L.marker([36.6285, 127.4575]).addTo(map);
+      marker.bindPopup('<h3>충북대학교</h3><p>충청북도 청주시 서원구 충대로 1</p>'); // 정보창 내용 설정
+
+      // 마커 클릭 시 정보창 열기
+      marker.on('click', () => {
+        marker.openPopup();
+      });
+    });
+
+    // --- 2) 차트 렌더링 (Chart.js) ---
+    document.addEventListener('DOMContentLoaded', () => {
+      const ctx = document.getElementById('gradChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['1월','2월','3월','4월','5월','6월'],
+          datasets: [
+            { label: 'Label 1', data: [5,7,8,9,12,15], borderWidth: 2, pointRadius: 3 },
+            { label: 'Label 2', data: [2,3,4,6,7,9], borderWidth: 2, pointRadius: 3 },
+            { label: 'Label 3', data: [1,2,3,4,5,6], borderWidth: 2, pointRadius: 3 }
+          ]
+        },
+        options: {
+          plugins: { legend: { position: 'top' } },
+          scales: {
+            x: { grid: { display: false } },
+            y: { beginAtZero: true }
+          }
+        }
+      });
+    });
+
+    // --- 3) 미니 캘린더 생성 (순수 JS) ---
+    document.addEventListener('DOMContentLoaded', () => {
+      const calEl = document.getElementById('miniCal');
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = today.getMonth(); // 0-based
+      const firstDay = new Date(year, month, 1).getDay(); 
+      const totalDays = new Date(year, month+1, 0).getDate();
+
+      // 요일 헤더
+      ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(d => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${d}</strong>`;
+        li.style.fontSize = '0.75rem';
+        calEl.append(li);
+      });
+      // 빈 칸
+      for (let i=0; i<firstDay; i++) calEl.append(document.createElement('li'));
+      // 날짜 채우기
+      for (let d=1; d<=totalDays; d++) {
+        const li = document.createElement('li');
+        li.textContent = d;
+        if (d === today.getDate()) li.classList.add('today');
+        calEl.append(li);
+      }
+    });
+  </script>
+</body>
+</html>

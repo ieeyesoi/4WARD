@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CBNU SW 포털 - 게시글 상세</title>
+  <link rel="stylesheet" href="post.css">
+</head>
+<body>
+  <!-- 상단 네비게이션 -->
+  <nav class="nav">
+    <span class="logo">CBNU SW <small>포털</small></span>
+    <a href="#">Home</a>
+    <a href="#">통합 정보</a>
+    <a href="#" class="active">커뮤니티</a>
+    <a href="#">포트폴리오</a>
+    <a href="#">About</a>
+    <span class="nav__user">000님 <span class="nav__user__icon">👤</span></span>
+  </nav>
+
+  <main class="post-main">
+    <!-- 왼쪽 카테고리 필터 -->
+    <aside class="post-filter">
+      <div class="filter-category">
+        <strong>Category</strong>
+        <div><span class="cat-icon">📝</span> 스터디 모집</div>
+        <div><span class="cat-icon">👥</span> 팀원 모집</div>
+        <div><span class="cat-icon">💬</span> 자유게시판</div>
+      </div>
+    </aside>
+
+    <!-- 게시글 상세/댓글 -->
+    <section class="post-detail-section">
+      <!-- 게시글 이미지 -->
+      <div class="post-img-preview">
+        <img src="https://placehold.co/540x200?text=이미지" alt="썸네일" />
+      </div>
+      <!-- 작성자, 타이틀, 본문 -->
+      <div class="post-author-row">
+        <div class="user-icon">👤</div>
+        <div>
+          <div class="author-name">작성자</div>
+          <div class="created-time">1분 전 작성됨</div>
+        </div>
+      </div>
+      <div class="post-content">
+        <div class="post-title">[카테고리] 제목</div>
+        <div class="post-body">본문 내용... <span class="post-more">더보기</span></div>
+      </div>
+      <div class="post-meta-row">
+        <span>20개의 댓글</span>
+        <span class="meta-divider">|</span>
+        <span class="meta-comment">💬 Comment</span>
+      </div>
+      <!-- 댓글 목록 -->
+      <div id="comments"></div>
+      <!-- 댓글 입력 -->
+      <form id="commentForm" class="comment-form">
+        <input id="commentInput" type="text" placeholder="댓글을 입력하세요" autocomplete="off" />
+        <button type="submit" class="send-btn">🚀 보내기</button>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    (28644) 충북 청주시 서원구 충대로1, 충북대학교 전자정보대학 소프트웨어학부 S4-1동(전자정보 3관) 217호
+  </footer>
+  <script src="post.js"></script>
+</body>
+</html>

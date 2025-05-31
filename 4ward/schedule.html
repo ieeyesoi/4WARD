@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>D-DAY 일정 관리 (CBNU SW 포털)</title>
+  <!-- CSS 연결 -->
+  <link rel="stylesheet" href="schedule.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- JS 연결 -->
+  <script src="schedule.js" defer></script>
+</head>
+<body>
+  <!-- 네비게이션 바 -->
+  <nav class="nav">
+    <a href="index.html" class="nav__item">Home</a>
+    <a href="schedule.html" class="nav__item active">통합 정보</a>
+    <a href="#" class="nav__item">커뮤니티</a>
+    <a href="#" class="nav__item">포트폴리오</a>
+    <a href="#" class="nav__item">About</a>
+    <div class="nav__user">000님</div>
+  </nav>
+
+  <!-- 메인 컨테이너 -->
+  <main class="schedule-container">
+    <!-- 1. 이벤트 카드 섹션 -->
+    <section class="event-cards">
+      <div class="event-cards__header">
+        <h2>
+          <span id="currentMonth">June</span>
+          <small><span id="eventCount">0</span> Events</small>
+        </h2>
+      </div>
+      <div id="cardList" class="event-cards__list">
+        <!-- JS 로드 시 .event-card 요소들이 이곳에 추가됩니다 -->
+      </div>
+    </section>
+
+    <!-- 2. 캘린더 & 타임라인 섹션 -->
+    <section class="calendar-timeline">
+      <!-- 2a. 미니 캘린더 -->
+        <div class="mini-calendar">
+            <div class="mini-calendar__header">
+                <button id="calPrev" class="nav-btn"><</button>
+                <span id="calYear" >2025</span>.<span id="calMonth">06</span>
+                <button id="calNext" class="nav-btn">></button>
+            </div>
+            <div class="mini-calendar__weekdays">
+                <span>Mon</span><span>Tue</span><span>Wed</span>
+                <span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            </div>
+            <div class="mini-calendar__dates" id="calendarDates">
+                <!-- 날짜가 JS로 생성 -->
+            </div>
+        </div>
+
+        <!-- 2b. 주간 타임라인 -->
+        <div class="timeline-view">
+            <div class="week-nav">
+                <button id="prevWeek" class="nav-btn"><</button>
+                <span id="weekLabel">June, 2025</span>
+                <button id="nextWeek" class="nav-btn">></button>
+                <button id="todayBtn" class="btn">Today</button>
+                <button id="addEventBtn" class="btn">+ 일정 추가하기</button>
+            </div>
+            <div id="weekDays" class="week-days">
+                <!-- JS 로 Mon–Sun 추가 -->
+            </div>
+            <div id="dayTimeline" class="day-timeline">
+                <!-- JS 로 시간축 이벤트 추가 -->
+                <div id="timeline-row" class="timeline-row">
+                <!-- JS 로 시간축 이벤트 추가 -->
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. 일정 추가 모달 -->
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal">
+      <button id="modalClose" class="modal-close">×</button>
+      <h2>일정 추가하기</h2>
+      <form id="eventForm" class="form">
+        <label>
+          일정 제목
+          <input type="text" id="evtTitle" required>
+        </label>
+        <label>
+          날짜
+          <input type="date" id="evtDate" required>
+        </label>
+        <label>
+          시간
+          <input type="time" id="evtTime" required>
+        </label>
+        <label>
+          설명
+          <textarea id="evtDesc"></textarea>
+        </label>
+        <div class="form__btns">
+          <button type="submit">완료 →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
