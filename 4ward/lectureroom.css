@@ -1,0 +1,250 @@
+/* ────────────────────────────────────────
+   Reset & 기본 설정
+──────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #fff;
+  color: #333;
+  padding: 0 10rem;
+}
+
+/* ────────────────────────────────────────
+   네비게이션
+──────────────────────────────────────── */
+/* 네비게이션 */
+.nav {
+  display: flex; align-items:center;
+  background:#fff; padding:1rem 2rem;
+}
+.nav__item {
+  margin-right:1.5rem; text-decoration:none; color:#555; font-weight:500; font-size: 1.5rem;
+}
+.nav__item.active { color:#000; font-weight:600; }
+.nav__user { margin-left:auto; color:#777; }
+
+/* ────────────────────────────────────────
+   강의 정보 페이지 레이아웃
+──────────────────────────────────────── */
+.lecture-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+  gap: 1rem;
+}
+
+/* 탭 */
+.tabs {
+  padding-left: 39rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.tabs .tab-btn {
+  padding: 1rem 2rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.tabs .tab-btn.active {
+  background: #4a4a4a;
+  color: #fff;
+  border-color: #4a4a4a;
+}
+
+/* 검색 */
+.search-wrap {
+    padding-left: 20rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+#searchInput {
+  width: 100%;
+  width: 50rem;
+  height: 4rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 9999px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* 메인 컨텐츠 영역 */
+.content {
+  display: flex;
+  gap: 1rem;
+}
+
+/* ────────────────────────────────────────
+   좌측 리스트 (카드 스타일)
+──────────────────────────────────────── */
+.building-list {
+  list-style: none;
+  flex: 1 1 0;          /* 리스트 쪽을 맵보다 2배 넓게 */
+  height: 95rem;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+/* 카드 컨테이너 */
+.building-list li {
+  width: 90rem;
+  height: 10rem;
+  position: relative;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 30px;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: box-shadow .2s, background .2s;
+  cursor: pointer;
+}
+.building-list li:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: #fafafa;
+}
+
+/* 선택된(Active) 카드 */
+.building-list li.active {
+  background: #4a4a4a;
+  border-color: #4a4a4a;
+  color: #fff;
+}
+.building-list li.active .building-item__detail {
+  opacity: 0.85;
+}
+
+/* 1. 강의동명 (첫 줄) */
+.building-item__header {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* 2. 상세 정보 (두 번째 줄) */
+.building-item__detail {
+  font-size: 1.25rem;
+  color: inherit;
+  opacity: 0.7;
+}
+
+/* 버튼 그룹 */
+.building-item__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* 3. 선택 버튼 */
+.select-btn {
+  flex: 0.2;
+  padding: 0.5rem;
+  background: #aaa;
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background .2s;
+}
+.select-btn:hover {
+  background: #777;
+}
+
+/* 4. 삭제 버튼 */
+.del-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  padding: 0.25rem 0.6rem;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.del-btn:hover {
+  background: #e74c3c;
+  color: #fff;
+}
+
+/* ────────────────────────────────────────
+   우측 맵
+──────────────────────────────────────── */
+.map-view {
+  flex: 1 1 0;
+  height: 95rem;
+  width: 90rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #e5e5e5;
+}
+
+/* ────────────────────────────────────────
+   모달 폼
+──────────────────────────────────────── */
+.form-container {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-container.hidden {
+  display: none;
+}
+.form {
+  width: 300px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.form h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.form label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+.form input,
+.form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.form__btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.form__btns button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #5c4ce3;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+#cancelBtn {
+  background: #aaa;
+}

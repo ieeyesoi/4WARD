@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CBNU SW 포털 - 커뮤니티</title>
+  <link rel="stylesheet" href="board.css">
+</head>
+<body>
+  <!-- 상단 네비게이션 -->
+  <nav class="nav">
+    <span class="logo">CBNU SW <small>포털</small></span>
+    <a href="#">Home</a>
+    <a href="#">통합 정보</a>
+    <a href="#" class="active">커뮤니티</a>
+    <a href="#">포트폴리오</a>
+    <a href="#">About</a>
+    <span class="nav__user">000님 <span class="nav__user__icon">👤</span></span>
+  </nav>
+
+  <main class="board-main">
+    <!-- 왼쪽 카테고리 필터 -->
+    <aside class="board-filter">
+      <div class="filter-title">Filters</div>
+      <div class="filter-category">
+        <strong>Category</strong>
+        <label><input type="checkbox" checked> 스터디 모집</label>
+        <label><input type="checkbox" checked> 팀원 모집</label>
+        <label><input type="checkbox" checked> 자유게시판</label>
+      </div>
+    </aside>
+
+    <!-- 게시판 목록 -->
+    <section class="board-list-section">
+      <div class="board-list-header">
+        <input type="text" placeholder="🔍 Search" class="search-input">
+        <button class="write-btn" id="writeBtn">+ 작성하기</button>
+      </div>
+      <table class="board-list">
+        <thead>
+          <tr>
+            <th>제목</th>
+            <th>날짜</th>
+            <th>작성자</th>
+            <th>조회수</th>
+          </tr>
+        </thead>
+        <tbody id="boardTableBody">
+          <!-- JS로 게시글 렌더링 -->
+        </tbody>
+      </table>
+      <!-- Pagination -->
+      <div class="pagination">
+        <button disabled>&lt;</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <span>...</span>
+        <button>10</button>
+        <button>&gt;</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- 글 작성 모달 -->
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">×</button>
+      <h2>글 작성하기</h2>
+      <form id="postForm" class="post-form">
+        <div class="img-preview">
+          <img id="previewImage" src="https://placehold.co/350x140?text=이미지" alt="미리보기" />
+        </div>
+        <div class="upload-img">
+          <label for="imageUpload">이미지 업로드:</label>
+          <input type="file" id="imageUpload" accept="image/*">
+        </div>
+        <div class="category-checkboxes">
+          <label><input type="checkbox"> 스터디 모집</label>
+          <label><input type="checkbox"> 팀원 모집</label>
+          <label><input type="checkbox"> 자유게시판</label>
+        </div>
+        <input type="text" placeholder="제목" required>
+        <textarea placeholder="작성하고 싶은 세부 내용" rows="6" required></textarea>
+        <div class="form__btns">
+          <button type="submit">완료 →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="board.js"></script>
+</body>
+</html>
