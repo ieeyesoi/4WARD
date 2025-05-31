@@ -44,7 +44,7 @@ PM 이예솔 | yesol4138@chungbuk.ac.kr
 
 ### 🚀 작업 방식
 
-1. 모든 팀원은 각자 GitHub에서 해당 local repository를 Fprk합니다.
+1. 모든 팀원은 각자 GitHub에서 해당 local repository를 Fork합니다.
 2. 자신의 Fork된 저장소를 로컬로 Clone합니다.
      git clone http://gitgub.com/팀원계정명/4WARD.git
 4. **자신의 브랜치에서만 작업**합니다.
@@ -61,7 +61,7 @@ PM 이예솔 | yesol4138@chungbuk.ac.kr
 
 ### 🔒 브랜치 보호 규칙
 
-- `main` 브랜치는 다음과 같이 보호됩니다:
+- 브랜치는 다음과 같이 보호됩니다:
   - ✅ PR을 통해서만 병합 가능
   - ✅ 최소 1명 이상의 리뷰 필요
   - ✅ 직접 push 금지
