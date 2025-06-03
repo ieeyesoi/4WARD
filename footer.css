@@ -1,0 +1,19 @@
+/* footer.css */
+.cbnu-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  color: #555;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  font-family: "Pretendard", sans-serif;
+}
+
+/* 크기 조정 */
+@media screen and (max-width: 1440px) {
+  .cbnu-footer {
+    font-size: 12px;
+    padding: 16px 20px;
+    text-align: center;
+  }
+}
