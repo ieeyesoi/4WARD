@@ -1,0 +1,82 @@
+reset
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Noto Sans KR', sans-serif; background:#fff; color:#333; }
+
+/* 네비게이션 */
+.nav {
+  display: flex; align-items:center;
+  background:#fff; padding:1rem 2rem;
+}
+.nav__item {
+  margin-right:1.5rem; text-decoration:none; color:#555; font-weight:500; font-size: 1.5rem;
+}
+.nav__item.active { color:#000; font-weight:600; }
+.nav__user { margin-left:auto; color:#777; }
+
+/* 그리드 레이아웃 */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap:2rem;
+  padding:2rem;
+}
+
+/* 카드 공통 */
+.card {
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+  display:flex; flex-direction:column;
+}
+.card__hdr {
+  padding:1rem 1.5rem;
+  border-bottom:1px solid #eee;
+  text-align:center;
+}
+.card__hdr h3 { font-size:1.125rem; }
+
+/* 바디 영역: map/chart/calendar 공통 */
+.card__body {
+  flex:1;
+  padding:1.5rem;
+  display:flex; flex-direction:column; align-items:center;
+}
+.card__body--map img {
+  width:100%; height:180px; object-fit:cover; border-radius:8px;
+}
+.card__body--chart canvas {
+  width:100%; height:180px;
+  border:1px solid #ddd; border-radius:4px;
+}
+.card__body--calendar {
+  width:100%;
+}
+.legend {
+  display:flex; justify-content:center; gap:1.5rem;
+  list-style:none; font-size:.875rem; color:#555;
+  align-items:center;
+}
+.dot {
+  display:inline-block; width:.8em; height:.8em; border-radius:50%;
+  margin-right:.5em;
+  vertical-align:middle;
+}
+.dot--hw { background:#ccc; }
+.dot--exam { background:#bbb; }
+
+/* 푸터 */
+.card__ftr {
+  padding:1rem;
+  border-top:1px solid #eee;
+  text-align:center;
+}
+.btn {
+  padding:.5rem 1.5rem;
+  font-size:.9rem;
+  border:1px solid #888;
+  border-radius:9999px;
+  background:transparent;
+  cursor:pointer;
+  transition: background .2s;
+}
+.btn:hover { background:#f0f0f0; }

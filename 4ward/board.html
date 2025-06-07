@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>CBNU SW 포털 - 커뮤니티</title>
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="board.css">
+  <link rel="stylesheet" href="footer.css" />
+</head>
+<body>
+  <div id="header"></div>
+  <main class="board-main">
+    <aside class="board-filter">
+      <div class="filter-title">Filters</div>
+      <div class="filter-category">
+        <strong>Category</strong>
+        <label><input type="checkbox" value="스터디 모집" checked> 스터디 모집</label>
+        <label><input type="checkbox" value="팀원 모집" checked> 팀원 모집</label>
+        <label><input type="checkbox" value="자유게시판" checked> 자유게시판</label>
+      </div>
+    </aside>
+    <section class="board-list-section">
+      <div class="board-list-header">
+        <input type="text" placeholder="🔍 Search" class="search-input">
+        <button class="write-btn" id="writeBtn">+ 작성하기</button>
+      </div>
+      <table class="board-list">
+        <thead>
+          <tr><th>제목</th><th>날짜</th><th>작성자</th><th>조회수</th></tr>
+        </thead>
+        <tbody id="boardTableBody"></tbody>
+      </table>
+      <div class="pagination"></div>
+    </section>
+  </main>
+
+  
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">×</button>
+      <h2>글 작성하기</h2>
+      <form id="postForm" class="post-form">
+        <div class="img-preview">
+          <img id="previewImage" src="https://placehold.co/350x140?text=이미지" alt="미리보기" />
+        </div>
+        <div class="upload-img">
+          <label for="imageUpload">이미지 업로드:</label>
+          <input type="file" id="imageUpload" accept="image/*">
+        </div>
+        <div class="category-checkboxes">
+          <label><input type="checkbox"> 스터디 모집</label>
+          <label><input type="checkbox"> 팀원 모집</label>
+          <label><input type="checkbox"> 자유게시판</label>
+        </div>
+        <input type="checkbox" id="anonymousCheck">익명
+        <input type="text" id="postTitle" placeholder="제목" required>
+        <label class="anonymous-checkbox">
+        </label>
+
+        <textarea id="postContent" placeholder="작성하고 싶은 세부 내용" rows="6" required></textarea>
+        <div class="form__btns">
+          <button type="submit">완료 →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="footer"></div>
+  <script>
+    fetch("footer.html").then(res => res.text()).then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+  </script>
+  <script src="board.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+  <script src="session.js"></script>
+  <script src="header.js"></script>
+</body>
+</html>

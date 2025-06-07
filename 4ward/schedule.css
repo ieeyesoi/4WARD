@@ -1,0 +1,322 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #f4f4f9;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+.nav__item {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
+.nav__user {
+  margin-left: auto;
+  color: #888;
+}
+
+.schedule-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* padding: 2rem 4vw;
+  max-width: 1400px;
+  margin: 0 auto; */
+  width: 100vw;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 2rem 3vw 3rem 10vw;  /* 좌우 살짝만 패딩 */
+}
+
+.event-cards {
+  width: 100%;
+  min-height: 120px;
+  margin-bottom: 1.5rem;
+  background-color: #ebebeb;
+  border-radius: 20px;
+  padding: 1%;
+}
+.event-cards__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.event-cards__list {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+.event-card {
+  min-width: 250px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 10px rgba(80,90,130,0.04);
+  border: 1.5px solid #e6e7f0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+}
+.event-card .dday {
+  font-weight: bold;
+  color: #5c4ce3;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+/* 캘린더 & 타임라인 레이아웃 */
+.calendar-timeline {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* 미니캘린더 */
+.mini-calendar {
+  margin-top: 3%;
+  flex: 0 0 30rem;
+  width: 100%;
+  height: 100%;
+  background-color: #ebebeb;
+  border-radius: 14px;
+  padding: 1.3rem;
+  box-shadow: 0 2px 10px rgba(80,90,130,0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mini-calendar__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 0.7rem;
+  font-size: 2rem;
+}
+.mini-calendar__weekdays {
+  margin-left: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  color: #999;
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+  gap: 1.85rem;
+  padding: 0 0.05rem;
+}
+.mini-calendar__weekdays span {
+  width: 2.3rem;
+  text-align: left;
+  font-size: 1.5rem;
+}
+.mini-calendar__dates {
+  margin-left: 10%;
+  width: 30rem;
+  min-width: 17.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.85rem;
+  flex-direction: row;
+  justify-content: left;
+}
+.mini-date {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.12rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #444;
+  background: none;
+  transition: background .2s;
+  margin-bottom: 3%;
+}
+.mini-date-today {
+  background-color: #e4f6ff !important;
+  color: #1b72ce !important;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+.mini-date-event {
+  background: #e5e3f7 !important;
+  background-color: #a5a5a5 !important;
+}
+
+/* 타임라인 */
+.timeline-view {
+  flex: 1 1 0;
+  min-width: 0;
+  background-color: #ebebeb;
+  border-radius: 14px;
+  padding: 1.3rem 2rem 2.5rem 2rem;
+  box-shadow: 0 2px 10px rgba(80,90,130,0.03);
+  display: flex;
+  flex-direction: column;
+}
+.week-nav {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: 1rem;
+}
+#weekLabel {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-right: 0.7rem;
+}
+.btn, .nav-btn {
+  background-color: #b0b0b0;
+  color: #242424;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.45em 1em;
+  cursor: pointer;
+  margin-right: 0.18rem;
+  transition: background .13s;
+}
+.btn:hover, .nav-btn:hover {
+  background: #454545;
+}
+.week-days {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+  margin-left: 1.7rem;
+  margin-right: 2.7rem;
+  padding-left: 3.4rem; /* ← 이 값만 추가/조절! */
+}
+.week-days div {
+  flex: 1 1 0;
+  text-align: center;
+  padding: 0.2rem 0;
+  border-radius: 8px;
+  font-size: 1.07rem;
+  color: #666;
+  background: none;
+  margin: 0 2px;
+}
+.weekday-today {
+  background-color: #1b72ce !important;
+  color: #fff !important;
+  font-weight: bold;
+}
+.weekday-event {
+  background-color: #a8a8a8 !important;
+  color: #ececec !important;
+}
+.day-timeline {
+  position: relative;
+  min-height: 520px;
+  max-height: 600px;
+  border-left: 2px solid #f0f0f6;
+  margin-left: 0rem;
+  margin-top: 0.3rem;
+  overflow-y: auto;
+  background: #fff;
+  /* flex-direction, display: block (기본) */
+}
+.timeline-row {
+  display: flex;
+  align-items: flex-start;
+  height: 40px;
+  margin-left: 0%;
+  border-bottom: 1px solid #ededf7;
+  position: relative;
+  
+  margin-bottom: 2rem;
+}
+.timeline-time {
+  min-width: 3.2rem;
+  color: #aaa;
+  font-size: 1.2rem;
+  margin-right: 0.7rem;
+  text-align: right;
+  flex-shrink: 0;
+}
+.timeline-event {
+  position: absolute;
+  z-index: 2;
+  left: 5rem; /* 시간 라벨 우측에 나오게 */
+  width: 13%;
+  min-width: 80px;
+  background: #9a9a9a;
+  color: #373737;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  padding: 0.38em 0.5em 0.38em 0.5em;
+  box-shadow: 0 1px 4px rgba(235,150,100,0.07);
+  border: 1.2px solid #8f8f8f;
+  padding: 1.2rem;
+  margin-top: -2rem;
+  margin-left: 1rem;
+}
+.timeline-event b {
+  display: block;
+  margin-bottom: 0.1em;
+  font-weight: 700;
+}
+
+/* 모달 */
+.modal-overlay {
+  display: none;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  align-items: center; justify-content: center;
+  background: rgba(40,40,60,0.18);
+  z-index: 100;
+}
+.modal-overlay.active { display: flex; }
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.1rem 2.1rem 1.2rem 2.1rem;
+  min-width: 330px;
+  box-shadow: 0 2px 18px rgba(90,100,180,0.09);
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.45rem;
+  color: #b3b3b3;
+  cursor: pointer;
+}
+.form label { display: block; margin-bottom: 0.9em; color: #222;}
+.form input, .form textarea {
+  width: 100%; padding: 0.62em 0.7em; margin-top: 0.3em;
+  border: 1px solid #ccc; border-radius: 7px; font-size: 1rem;
+  background: #f9f9ff;
+}
+.form__btns { text-align: right; margin-top: 1.5em;}
+.form__btns button {
+  padding: 0.55em 1.4em; border: none;
+  background: #5c4ce3;
+  color: #fff; border-radius: 8px; cursor: pointer; font-size: 1rem;
+}
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  background-color: #f8f8ff;
+  cursor: pointer;
+}

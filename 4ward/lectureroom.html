@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>강의 정보 확인 (CBNU SW 포털)</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="lectureroom.css">
+  <!-- Google Maps JS API -->
+  <script
+    src="https://maps.googleapis.com/maps/api/testcode&language=ko"
+    defer
+  ></script>
+  <script src="lectureroom.js" defer></script>
+</head>
+<body>
+  <div id="header"></div>
+
+
+  <main class="lecture-container">
+    <div class="tabs">
+      <button class="tab-btn active" data-type="major">전공</button>
+      <button class="tab-btn"      data-type="general">교양</button>
+    </div>
+
+    <div class="search-wrap">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="강의실 / 교수명 검색"
+      />
+    </div>
+
+    <div class="content">
+      <ul class="building-list" id="list"></ul>
+      <div class="map-view" id="map"></div>
+    </div>
+  </main>
+
+  <!-- 강의실 추가 폼 모달 -->
+  <div id="formContainer" class="form-container hidden">
+    <form id="addRoomForm" class="form">
+      <h2>강의실 추가</h2>
+
+      <label>
+        카테고리
+        <select id="categorySelect">
+          <option value="major">전공</option>
+          <option value="general">교양</option>
+        </select>
+      </label>
+
+      <label>
+        수업 이름
+        <input id="roomNameInput" type="text" required placeholder="수업 이름" />
+      </label>
+
+      <label>
+        교수명
+        <input id="profNameInput" type="text" required placeholder="교수명" />
+      </label>
+
+      <label>
+        강의동
+        <input id="buildingNumberInput" type="text" required placeholder="강의동" />
+      </label>
+
+      <label>
+        강의실
+        <input id="roomNumberInput" type="text" required placeholder="강의실" />
+      </label>
+
+      <div class="form__btns">
+        <button type="submit">저장</button>
+        <button type="button" id="cancelBtn">취소</button>
+      </div>
+    </form>
+  </div>
+
+
+  <!-- 푸터가 들어갈 자리 -->
+<div id="footer"></div>
+
+<!-- footer.html 동적 삽입 -->
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+<!-- FontAwesome (아이콘용) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+<!-- 로그인 상태 유지용 JS -->
+<script src="session.js"></script>
+
+<!-- 헤더 동적 삽입 -->
+<script src="header.js"></script>
+
+</body>
+</html>

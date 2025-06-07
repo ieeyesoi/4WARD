@@ -1,0 +1,760 @@
+/* mypage.css */
+
+/*
+========================================================================================
+[GLOBAL & SHARED STYLES]
+이 섹션의 스타일은 포털의 모든 페이지(상단바, 모달, 기본 텍스트 등)에서 일관되게 사용됩니다.
+========================================================================================
+*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif; /* Noto Sans KR 폰트 적용 */
+  background: #f4f4f9; /* 연한 회색 배경 */
+  color: #222; /* 기본 텍스트 색상 */
+  box-sizing: border-box; /* 패딩과 보더가 요소의 총 너비/높이에 포함되도록 설정 */
+}
+
+/* 상단 네비게이션 바 */
+.nav {
+  display: flex; /* 요소들을 가로로 배열 */
+  align-items: center; /* 세로 중앙 정렬 */
+  gap: 2rem; /* 메뉴 항목 간 간격 */
+  background: #fff; /* 흰색 배경 */
+  border-bottom: 1px solid #eee; /* 하단 회색 선 */
+  height: 54px; /* 높이 고정 */
+  padding: 0 2.5rem; /* 좌우 패딩 */
+  font-size: 1.05rem; /* 글자 크기 */
+}
+
+/* 일반적인 메인 콘텐츠 영역 스타일 (게시판, 포트폴리오 페이지에서 사용되지만 mypage.html에서는 mypage-main 사용) */
+/* .board-main { display:flex; gap:2rem; margin: 3rem auto 0; padding: 3%;} */
+
+
+/* 포트폴리오 카드 (포트폴리오 페이지 및 마이페이지에서 공통 사용) */
+.portfolio-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.portfolio-card__image {
+  width: 100%;
+  height: 180px;
+  background-color: #f0f0f5; /* Explicitly background-color */
+  display: flex; /* Use flex to center content */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  color: #bbb;
+  font-size: 3rem;
+  flex-shrink: 0;
+  /* Ensure placeholder text/emoji is centered if img is not present */
+  text-align: center;
+  line-height: 1; /* Reset line-height to allow vertical centering by align-items */
+}
+.portfolio-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portfolio-card__info {
+  padding: 1rem 1.2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.portfolio-card__category {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.4rem;
+}
+.portfolio-card__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.portfolio-card__author {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* 포트폴리오 상세 모달 (portfolio.html에서 사용) */
+.portfolio-detail-modal {
+  background: #fff;
+  padding: 2rem 2.6rem;
+  border-radius: 13px;
+  min-width: 600px;
+  position: relative;
+  box-shadow: 0 2px 16px rgba(80, 90, 160, 0.09);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.portfolio-detail-modal .detail-image-main {
+  width: 100%;
+  height: 280px;
+  background-color: #f0f0f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 4rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+.portfolio-detail-modal .detail-image-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.portfolio-detail-modal .detail-thumbnails {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.portfolio-detail-modal .detail-thumbnail-item {
+  width: 100px;
+  height: 70px;
+  background-color: #f0f0f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s ease;
+}
+.portfolio-detail-modal .detail-thumbnail-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.portfolio-detail-modal .detail-thumbnail-item.active {
+  border-color: #5c4ce3;
+}
+.portfolio-detail-modal .detail-info-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  font-size: 0.98rem;
+}
+.portfolio-detail-modal .detail-info-row strong {
+  font-weight: 600;
+  min-width: 70px;
+  color: #555;
+}
+.portfolio-detail-modal .detail-info-row span {
+  color: #333;
+}
+.portfolio-detail-modal .detail-description-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+.portfolio-detail-modal .detail-description-content {
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 2rem;
+}
+.portfolio-detail-modal .detail-comments {
+  margin-top: 2rem;
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
+}
+.portfolio-detail-modal .detail-comment-input {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  align-items: center;
+}
+.portfolio-detail-modal .detail-comment-input input {
+  flex: 1;
+  padding: 0.7em 1em;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+.portfolio-detail-modal .detail-comment-input button {
+  background: #5c4ce3;
+  color: #fff;
+  border: none;
+  padding: 0.7em 1.3em;
+  border-radius: 9px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.portfolio-detail-modal .comment-item {
+  padding: 0.8rem 0;
+  border-bottom: 1px dashed #f0f0f0;
+}
+.portfolio-detail-modal .comment-item:last-child {
+  border-bottom: none;
+}
+.portfolio-detail-modal .comment-author {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.portfolio-detail-modal .comment-meta {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+.portfolio-detail-modal .comment-actions button {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+
+/*
+========================================================================================
+[MYPAGE SPECIFIC STYLES]
+이 섹션의 스타일은 마이페이지 (image_8ee5f5.png, image_8ee5dc.png)의 고유한 레이아웃과 컴포넌트들을 정의합니다.
+========================================================================================
+*/
+
+/* 마이페이지 전체 레이아웃 (2단 구성) */
+.mypage-main {
+  display: flex; /* Flexbox를 사용하여 좌우 컬럼 생성 */
+  gap: 2rem; /* 좌우 컬럼 사이 간격 */
+  margin: 3rem auto 0; /* 상단 여백 및 좌우 자동 마진으로 중앙 정렬 */
+  padding: 3%; /* 내부 패딩 */
+  align-items: flex-start; /* 컬럼들을 상단 기준으로 정렬 */
+  max-width: 1400px; /* 전체 페이지 내용의 최대 너비 */
+}
+
+/* 마이페이지 왼쪽 컬럼 (프로필 정보) */
+.mypage-left-column {
+  width: 480px; /* 이미지에 맞게 고정 너비 설정 */
+  flex-shrink: 0; /* 공간이 부족해도 이 컬럼이 줄어들지 않도록 설정 */
+}
+
+/* 마이페이지 오른쪽 컬럼 (탭 콘텐츠 영역) */
+.mypage-right-column {
+  flex-grow: 1; /* 남은 공간을 모두 차지하도록 설정 */
+}
+
+/* 마이페이지 프로필 개요 섹션 (왼쪽 컬럼 내) */
+.mypage-profile-overview {
+  background: #fff; /* 흰색 배경 */
+  border-radius: 8px; /* 모서리 둥글게 */
+  padding: 2rem; /* 내부 패딩 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* 그림자 효과 */
+  display: flex; /* 내부 요소들을 flexbox로 정렬 */
+  flex-direction: column; /* 세로 방향 정렬 */
+  align-items: flex-start; /* 내용 왼쪽 정렬 */
+  margin-bottom: 2rem; /* 만약 컬럼이 세로로 쌓일 경우를 위한 하단 여백 */
+}
+
+.profile-header {
+  display: flex; /* 내부 요소들을 가로로 배열 */
+  align-items: center; /* 세로 중앙 정렬 */
+  width: 100%; /* 전체 너비 차지 */
+  margin-bottom: 1.5rem; /* 하단 여백 */
+  padding-bottom: 1.5rem; /* 하단 패딩 */
+  border-bottom: 1px solid #f0f0f0; /* 하단 구분선 */
+}
+
+.profile-avatar img {
+  width: 80px; /* 아바타 너비 */
+  height: 80px; /* 아바타 높이 */
+  border-radius: 50%; /* 원형으로 만듬 */
+  object-fit: cover; /* 이미지가 잘리지 않도록 */
+  margin-right: 1.5rem; /* 아바타와 정보 사이 간격 */
+  background-color: #e4e4ee; /* 아바타 없을 때 배경 */
+}
+
+.profile-info {
+  flex-grow: 1; /* 남은 공간을 차지하도록 설정 */
+}
+
+.user-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  color: #222;
+}
+
+.user-grade, .user-location {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+.profile-options .options-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  color: #888;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+.profile-options .options-btn:hover {
+  background: #f0f0f0;
+  color: #555;
+}
+
+.profile-details {
+  width: 100%; /* 전체 너비 차지 */
+}
+
+.profile-details h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  color: #222;
+}
+
+.overview-description {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.detail-grid {
+  display: grid; /* 그리드 레이아웃 */
+  grid-template-columns: 1fr; /* 최소 150px, 남는 공간 분배 */
+  gap: 1rem; /* 그리드 셀 간 간격 */
+}
+
+.detail-grid div {
+  background: #f9faff;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #f0f0f5;
+}
+
+.detail-grid strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.3rem;
+}
+
+.detail-grid p {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 0;
+  color: #333;
+}
+
+.detail-grid a {
+  color: #5c4ce3;
+  text-decoration: none;
+}
+.detail-grid a:hover {
+  text-decoration: underline;
+}
+
+/* 탭 네비게이션 섹션 (오른쪽 컬럼 내) */
+.mypage-tabs {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+.tab-nav {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1.5rem;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+  margin-right: 1rem;
+}
+.tab-button.active {
+  color: #5c4ce3; /* 활성 탭 버튼 색상 */
+  border-bottom-color: #5c4ce3; /* 활성 탭 버튼 하단 선 색상 */
+}
+.tab-button:hover:not(.active) { /* 활성이 아닌 탭 버튼 호버 시 색상 */
+    color: #4a3bbc;
+}
+
+/* 탭 콘텐츠 숨김/보임 제어 */
+.tab-content.hidden {
+  display: none;
+}
+
+/* 마이페이지 포트폴리오 탭 내부의 그리드 */
+.mypage-portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 이미지에 맞춰 카드 너비 조절 */
+  gap: 1.2rem; /* 카드 간 간격 */
+  padding-top: 0.5rem; /* 이미지에 있는 미묘한 상단 여백 표현 */
+}
+
+.mypage-portfolio-grid .portfolio-card {
+    /* 공통 .portfolio-card 스타일을 재사용하며, 마이페이지에 맞게 조정 */
+    margin-bottom: 0; /* 부모가 그리드이므로 외부 마진 제거 */
+}
+.mypage-portfolio-grid .portfolio-card__info {
+    position: relative; /* 댓글 아이콘 위치 조정을 위해 */
+    padding-bottom: 2.5rem; /* 댓글 카운트를 위한 하단 공간 확보 */
+}
+.mypage-portfolio-grid .portfolio-card__comments {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.2rem;
+    font-size: 0.95rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+/* 캘린더 탭 내부의 컨텐츠 래퍼 (캘린더와 이벤트 목록을 가로로 배열) */
+.calendar-tab-content-wrapper {
+  display: flex;
+  gap: 1.5rem; /* 캘린더와 이벤트 목록 사이 간격 */
+  flex-wrap: wrap; /* 화면이 작아지면 줄바꿈 허용 */
+}
+
+/* 캘린더 컨테이너 스타일 */
+.calendar-container {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #f0f0f5;
+  padding: 1.5rem;
+  flex: 1 1 350px; /* 캘린더가 최소 350px 너비를 가지며, 남은 공간을 유동적으로 차지 */
+  min-width: 300px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-header h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.calendar-nav-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.5rem 0.9rem;
+  font-size: 1.1rem;
+  color: #666;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.calendar-nav-btn:hover {
+  background: #f0f0f0;
+  border-color: #bbb;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7개의 동일한 너비 열 */
+  gap: 0.3rem; /* 날짜 셀 간 간격 */
+  text-align: center;
+}
+
+.day-name {
+  font-weight: 600;
+  color: #888;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.calendar-day {
+  padding: 0.8rem 0.3rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  position: relative; /* 이벤트 마커 점을 위한 설정 */
+  min-height: 40px; /* Ensure a minimum height for days */
+  display: flex; /* For centering content vertically */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+}
+.calendar-day.empty { /* 이전/다음 달의 날짜 등 클릭 비활성 */
+  color: #ccc;
+  cursor: default;
+}
+.calendar-day.current-month {
+  color: #333;
+}
+.calendar-day.prev-month,
+.calendar-day.next-month {
+  color: #bbb;
+  opacity: 0.7;
+}
+.calendar-day.today {
+  background: #e0eaff; /* 오늘 날짜 배경색 */
+  color: #5c4ce3; /* 오늘 날짜 글자색 */
+  font-weight: 700;
+}
+.calendar-day.selected {
+  background: #5c4ce3; /* 선택된 날짜 배경색 (메인 테마 색상) */
+  color: #fff; /* 선택된 날짜 글자색 */
+  font-weight: 700;
+}
+.calendar-day.has-event {
+  position: relative;
+}
+.calendar-day.has-event::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background-color: #5c4ce3; /* 이벤트 마커 점 색상 */
+  border-radius: 50%;
+}
+.calendar-day:hover:not(.empty) { /* 클릭 가능한 날짜 호버 효과 */
+    background: #f5f5f5;
+}
+.calendar-day.selected:hover { /* 선택된 날짜는 호버해도 색상 유지 */
+    background: #5c4ce3;
+}
+
+/* 이벤트 목록 컨테이너 스타일 */
+.event-list-container {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #f0f0f5;
+  padding: 1.5rem;
+  flex: 1 1 300px; /* 이벤트 목록이 최소 300px 너비를 가지며, 남은 공간을 유동적으로 차지 */
+  min-width: 280px;
+}
+
+.event-list-container h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+
+.event-list .event-item {
+  background: #f8faff; /* 이벤트 아이템 배경색 */
+  border: 1px solid #eef2f5; /* 이벤트 아이템 테두리 */
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03); /* 가벼운 그림자 */
+}
+.event-list .event-item:last-child {
+  margin-bottom: 0; /* 마지막 아이템 하단 마진 제거 */
+}
+
+.event-item .event-time {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.4rem;
+}
+
+.event-item .event-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 0.7rem;
+}
+
+.event-item .event-detail-btn {
+  background: #5c4ce3; /* 버튼 배경색 */
+  color: #fff; /* 버튼 글자색 */
+  border: none;
+  padding: 0.6em 1em;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  align-self: flex-end; /* 버튼을 아이템의 오른쪽 하단으로 정렬 */
+  transition: background 0.2s;
+}
+.event-item .event-detail-btn:hover {
+  background: #4a3bbc; /* 호버 시 버튼 색상 변경 */
+}
+
+.no-events-message {
+    text-align: center;
+    color: #888;
+    padding: 2rem;
+    font-size: 1rem;
+}
+
+/*
+========================================================================================
+[반응형 디자인]
+화면 크기에 따라 레이아웃을 조정합니다.
+========================================================================================
+*/
+@media (max-width: 992px) {
+  .mypage-main {
+    flex-direction: column; /* 작은 화면에서는 컬럼을 세로로 정렬 */
+    align-items: center; /* 블록들을 가운데 정렬 */
+    padding: 3% 2%; /* 좌우 패딩 조정 */
+  }
+  .mypage-left-column,
+  .mypage-right-column {
+    width: 100%; /* 전체 너비 차지 */
+    max-width: 700px; /* 콘텐츠 블록의 최대 너비 제한 (선택 사항) */
+  }
+  .mypage-profile-overview,
+  .mypage-tabs {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .calendar-tab-content-wrapper {
+    flex-direction: column; /* 캘린더와 이벤트 목록도 세로로 정렬 */
+    align-items: center;
+  }
+  .calendar-container,
+  .event-list-container {
+    width: 100%;
+    max-width: 500px; /* 캘린더/이벤트 목록의 최대 너비 */
+  }
+  /* 네비게이션 바 조정 */
+  .nav {
+      padding: 0 1rem;
+      gap: 1rem;
+  }
+  .logo {
+      margin-right: 0.5rem;
+      font-size: 1.3rem;
+  }
+  .nav a {
+      font-size: 0.95rem;
+      padding: 0 4px;
+  }
+}
+
+@media (max-width: 600px) {
+    /* 프로필 헤더를 세로로 정렬하여 작은 화면에서 공간 확보 */
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .profile-avatar {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    /* 옵션 버튼을 프로필 헤더 내에서 우측 상단에 고정 (선택 사항) */
+    .profile-options {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+    /* 상세 정보 그리드 아이템들을 세로로 쌓음 */
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+    /* 탭 버튼 패딩 및 글자 크기 조정 */
+    .tab-button {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+.profile-edit {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.user-name-row {
+  display: flex;
+  flex-direction: column;     /* 🔥 세로 정렬 */
+  align-items: flex-start;    /* 🔥 좌측 정렬 */
+  gap: 4px;                   /* 줄 사이 간격 */
+}
+
+.edit-btn {
+  background: #5c4ce3;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.edit-btn:hover {
+  background: #4a3bbc;
+}
+.user-studentId {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+
+.user-grade {
+  font-size: 15px;
+  color: #666;
+}
+
+.event-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.event-pin {
+  font-size: 1.2rem;
+}
+
+.event-title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.event-dday {
+  margin-left: auto;
+  font-size: 0.95rem;
+  color: #5c4ce3;
+}

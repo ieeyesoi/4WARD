@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>포트폴리오 수정</title>
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="portfolio.css" />
+  <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="portfolio-write-main">
+    <h2 style="text-align:center; margin-top:30px;">포트폴리오 수정하기</h2>
+    <form id="portfolioForm" class="post-form" style="max-width:700px; margin:0 auto;">
+      <div class="img-preview">
+        <img id="previewImage" src="https://placehold.co/350x180?text=이미지" alt="미리보기" />
+      </div>
+      <div class="upload-img">
+        <label for="imageUpload">이미지 업로드:</label>
+        <input type="file" id="imageUpload" accept="image/*">
+      </div>
+      <div class="category-checkboxes">
+        <label><input type="checkbox" name="portfolioCategory" value="웹"> 웹</label>
+        <label><input type="checkbox" name="portfolioCategory" value="앱"> 앱</label>
+        <label><input type="checkbox" name="portfolioCategory" value="게임"> 게임</label>
+        <label><input type="checkbox" name="portfolioCategory" value="개인"> 개인</label>
+        <label><input type="checkbox" name="portfolioCategory" value="팀 프로젝트"> 팀 프로젝트</label>
+      </div>
+      <input type="text" id="portfolioTitle" placeholder="제목" required>
+      <input type="text" id="portfolioAuthor" placeholder="제작자" required>
+      <div style="display:flex; gap: 1rem; margin-bottom: 1.1em;">
+        <select id="portfolioLanguage" required>
+          <option value="">사용한 언어</option>
+          <option value="HTML/CSS/JS">HTML/CSS/JS</option>
+          <option value="Python">Python</option>
+          <option value="Java">Java</option>
+          <option value="C++">C++</option>
+          <option value="Kotlin">Kotlin</option>
+          <option value="Swift">Swift</option>
+          <option value="React">React</option>
+          <option value="Vue">Vue</option>
+          <option value="Node.js">Node.js</option>
+        </select>
+        <input type="date" id="portfolioDate" required>
+      </div>
+      <input type="text" id="portfolioGithub" placeholder="GitHub 링크 (선택 사항)">
+      <input type="text" id="portfolioTags" placeholder="태그 (쉼표로 구분)">
+      <textarea id="portfolioDescription" placeholder="작성하고 싶은 세부 내용" rows="8" required></textarea>
+      <div class="form__btns">
+        <button type="submit">수정 완료 →</button>
+      </div>
+    </form>
+  </main>
+
+  <div id="footer"></div>
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+
+  <script src="portfolio-edit.js"></script>
+  <script src="session.js"></script>
+  <script src="header.js"></script>
+</body>
+</html>

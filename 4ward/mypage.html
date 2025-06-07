@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CBNU SW 포털 - 마이페이지</title>
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="footer.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="mypage.css">
+</head>
+<body>
+  <div id="header"></div>
+
+
+  
+
+  <main class="mypage-main">
+    <div class="mypage-left-column">
+      <section class="mypage-profile-overview">
+        <div class="profile-header">
+          <div class="profile-avatar">
+            <img src="https://placehold.co/80x80?text=👤" alt="User Avatar">
+          </div>
+          <div class="profile-info">
+          <div class="user-name-row">
+            <div class="user-studentId"></div>  
+            <div class="user-name"></div>
+            <p class="user-grade"></p>
+          </div>
+          </div>
+          <div class="profile-edit">
+          </div>
+
+        </div>
+        <div class="profile-details">
+          <h3>Overview</h3>
+          <p class="overview-description">자기소개</p>
+          <div class="detail-grid">
+            <div><strong>전공</strong><p>인공지능</p></div>
+            <div><strong>기술 스택</strong><p>React</p></div>
+            <div><strong>GitHub</strong><p><a href="https://github.com/yourusername" target="_blank">github.com</a></p></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="mypage-right-column">
+      <section class="mypage-tabs">
+        <div class="tab-nav">
+          <button class="tab-button active" data-tab="portfolio">포트폴리오</button>
+          <button class="tab-button" data-tab="calendar">캘린더</button>
+        </div>
+
+        <div id="portfolioTab" class="tab-content active">
+          <div class="mypage-portfolio-grid">
+            </div>
+        </div>
+
+        <div id="calendarTab" class="tab-content hidden">
+          <div class="calendar-tab-content-wrapper">
+            <div class="calendar-container">
+              <div class="calendar-header">
+                <button id="prevMonth" class="calendar-nav-btn">&lt;</button>
+                <h3 id="currentMonthYear">June 2025</h3>
+                <button id="nextMonth" class="calendar-nav-btn">&gt;</button>
+              </div>
+              <div class="calendar-grid">
+                <div class="day-name">Mon</div>
+                <div class="day-name">Tue</div>
+                <div class="day-name">Wed</div>
+                <div class="day-name">Thu</div>
+                <div class="day-name">Fri</div>
+                <div class="day-name">Sat</div>
+                <div class="day-name">Sun</div>
+                </div>
+            </div>
+
+            <div class="event-list-container">
+              <h4>다가오는 일정</h4>
+              <div id="upcomingEvents" class="event-list">
+                <p class="no-events-message">일정이 없습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+
+  <!-- ✅ Footer -->
+<!-- 푸터가 들어갈 자리 -->
+<div id="footer"></div>
+
+<!-- footer.html 동적 삽입 -->
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+<script src="mypage.js"></script>
+
+<!-- FontAwesome (아이콘용) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+<!-- 로그인 상태 유지용 JS -->
+<script src="session.js"></script>
+
+<!-- 헤더 동적 삽입 -->
+<script src="header.js"></script>
+
+</body>
+</html>

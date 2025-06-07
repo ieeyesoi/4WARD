@@ -1,0 +1,114 @@
+/* header.css */
+.cbnu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  font-family: "Pretendard", sans-serif;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 26px;
+  color: #111;
+}
+
+.logo .sub {
+  font-weight: 400;
+  font-size: 15px;
+  color: #666;
+}
+
+.nav-links a {
+  margin: 0 14px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #000;
+  font-weight: 600;
+}
+
+.nav-links a:visited {
+  color: #555;
+}
+
+.login-btn {
+  background-color: #ccc;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+  background-color: #bbb;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* 크기 조정 */
+@media screen and (max-width: 1440px) {
+  .cbnu-header {
+    padding: 16px 24px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .logo .sub {
+    font-size: 13px;
+  }
+
+  .nav-links a {
+    margin: 0 10px;
+    font-size: 14px;
+  }
+
+  .login-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+
+/* 드롭다운 기능 활성화 */
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  min-width: 120px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 999;
+}
+
+.user-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.user-dropdown .dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.user-dropdown .dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
