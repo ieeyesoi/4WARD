@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>CBNU 포털 로그인</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+<body>
+
+  <!-- ✅ Header -->
+  <div id="header"></div>
+
+  <!-- ✅ Login Form -->
+  <section class="form-section">
+    <button class="switch-btn" onclick="location.href='signup.html'">로그인 페이지</button>
+    <div class="form-box">
+      <h4>CBNU 포털 로그인</h4>
+      <h2>환영합니다!</h2>
+      <form>
+        <input type="text" placeholder="학번을 입력하세요" />
+        <input type="password" placeholder="비밀번호를 입력하세요" />
+        <button type="submit" class="submit-btn">완료</button>
+      </form>
+      <p class="switch-text">계정이 없으신가요?<br />
+         <a href="signup.html">Sign up</a></p>
+    </div>
+  </section>
+
+  <!-- ✅ Footer -->
+<!-- 푸터가 들어갈 자리 -->
+<div id="footer"></div>
+
+<!-- footer.html 동적 삽입 -->
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+<script src="login.js"></script>
+
+<!-- 헤더 동적 삽입 -->
+<script src="header.js"></script>
+
+</body>
+</html>

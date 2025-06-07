@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>CBNU SW 포털 - 포트폴리오</title>
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="board.css" />
+  <link rel="stylesheet" href="portfolio.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="board-main">
+    <aside class="board-filter">
+      <div class="filter-title">Filters</div>
+      <div class="filter-category">
+        <strong>Category</strong>
+        <label><input type="checkbox" value="웹" checked> 웹</label>
+        <label><input type="checkbox" value="앱" checked> 앱</label>
+        <label><input type="checkbox" value="게임" checked> 게임</label>
+        <label><input type="checkbox" value="개인" checked> 개인</label>
+        <label><input type="checkbox" value="팀 프로젝트" checked> 팀 프로젝트</label>
+      </div>
+    </aside>
+
+    <section class="board-list-section">
+      <div class="board-list-header">
+        <input type="text" placeholder="🔍 Search" class="search-input" />
+        <button class="write-btn" id="writeBtn">+ 작성하기</button>
+      </div>
+      <div class="portfolio-grid" id="portfolioGrid"></div>
+      <div class="pagination"></div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+
+  <script src="portfolio.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+  <script src="session.js"></script>
+  <script src="header.js"></script>
+</body>
+</html>

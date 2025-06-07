@@ -1,14 +1,5 @@
 body { margin:0; padding:0; font-family: 'Noto Sans KR',sans-serif; background: #f4f4f9; color: #222; }
-.nav {
-  display: flex; align-items: center; gap:2rem;
-  background: #fff; border-bottom: 1px solid #eee; height: 54px;
-  padding: 0 2.5rem; font-size: 1.05rem;
-}
-.logo { font-size: 1.5rem; font-weight: 700; margin-right: 2.5rem; }
-.nav__user { margin-left: auto; color: #888; }
-.nav__user__icon { background:#e4e4ee; padding:3px 7px; border-radius: 50%; }
-.nav a { color:#222; text-decoration: none; font-weight:500; padding:0 7px; }
-.nav a.active { font-weight:700; border-bottom:2px solid #5c4ce3; }
+
 .board-main { display:flex; gap:2rem; margin: 3rem auto 0; padding: 3%;}
 .board-filter { width:210px; min-width: 180px; background: #fff; border-radius: 8px; padding: 1.5rem 1.2rem 1.2rem; border:1px solid #ececec; }
 .filter-title { font-size:1.15rem; font-weight:700; margin-bottom:1.1rem; }
@@ -47,3 +38,4 @@ body { margin:0; padding:0; font-family: 'Noto Sans KR',sans-serif; background: 
 .form__btns { text-align:right; }
 .form__btns button { background: #222; color: #fff; padding:0.7em 1.3em; border-radius:8px; font-size:1.08rem; border:none; cursor:pointer;}
 .form__btns button:hover { background: #5c4ce3; }
+
