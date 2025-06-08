@@ -44,16 +44,24 @@ PM 이예솔 | yesol4138@chungbuk.ac.kr
 
 ### 🚀 작업 방식
 
-1. **자신의 브랜치에서만 작업**합니다.
-2. `git pull origin main`으로 최신 상태를 자주 반영합니다.
-3. 작업이 완료되면 **PR(Pull Request)**을 생성해 `main` 브랜치로 병합 요청합니다.
-4. PR은 팀원 1인 이상의 확인(리뷰) 후 병합합니다.
+1. 모든 팀원은 각자 GitHub에서 해당 local repository를 Fork합니다.
+2. 자신의 Fork된 저장소를 로컬로 Clone합니다.
+     git clone http://gitgub.com/팀원계정명/4WARD.git
+4. **자신의 브랜치에서만 작업**합니다.
+     git checkout -b 자신의_브랜치명
+     git add .
+     git commit -m "[#이슈 번호] 자신의 이름, 작업 내용 설명"
+5. 작업 내용을 자신의 Fork로 Push합니다.
+     git push origin 자신의_브랜치명
+7. `git pull origin main`으로 최신 상태를 자주 반영합니다.
+8. 작업이 완료되면 **PR(Pull Request)**을 생성해 로컬 레포지터리의 브랜치로 병합 요청합니다.
+9. PR은 팀원 1인 이상의 확인(리뷰) 후 병합합니다.
 
 ---
 
 ### 🔒 브랜치 보호 규칙
 
-- `main` 브랜치는 다음과 같이 보호됩니다:
+- 브랜치는 다음과 같이 보호됩니다:
   - ✅ PR을 통해서만 병합 가능
   - ✅ 최소 1명 이상의 리뷰 필요
   - ✅ 직접 push 금지
