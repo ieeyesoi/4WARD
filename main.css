@@ -1,0 +1,188 @@
+.main-top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f3f7;
+  padding: 60px 200px;
+  border-bottom: 1px solid #ddd;
+}
+
+.intro-left {
+  flex: 1;
+}
+
+.intro-left h1 {
+  font-size: 75px;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.intro-left p {
+  font-size: 20px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.go-btn {
+  padding: 15px 25px;
+  background-color: #888;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.go-btn:hover {
+  background-color: #666;
+}
+
+.intro-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-card {
+  background-color: #333;
+  padding: 100px;
+  border-radius: 300px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+}
+
+.major-box {
+  background-color: #fff;
+  padding: 70px 150px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.major-box span {
+  white-space: nowrap;
+}
+
+.main-cards {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 80px 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.card {
+  background-color: #f9f9fb;
+  padding: 50px 50px;
+  border-radius: 16px;
+  width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 500px;              /* 적당히 큼직한 크기 */
+  height: 300px;
+  margin: 0 auto 40px;       /* 가운데 정렬 + 아래 여백 */
+  display: block;
+  object-fit: contain;       /* 이미지 비율 유지 */
+  background-color: #eee;    /* 빈 이미지일 때 회색 박스 */
+  border-radius: 12px;
+}
+
+
+.card h3 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.card p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.card button {
+  padding: 8px 16px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card button:hover {
+  background-color: #eee;
+}
+
+/* 💻 노트북 화면 대응 (너비 1399px 이하) */
+@media (max-width: 1399px) {
+  .main-top-section {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .intro-left h1 {
+    font-size: 48px;
+  }
+
+  .intro-left p {
+    font-size: 16px;
+  }
+
+  .intro-right {
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .main-card {
+    flex-direction: column;
+    padding: 60px;
+    gap: 30px;
+    border-radius: 200px;
+  }
+
+  .major-box {
+    padding: 40px 80px;
+  }
+
+  .main-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 20px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card h3 {
+    font-size: 24px;
+  }
+
+  .card p {
+    font-size: 15px;
+  }
+}

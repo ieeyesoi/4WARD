@@ -2,8 +2,11 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>통합 정보</title>
+  <title>CBNU SW 포털 - 통합 정보</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
 
   <!-- Leaflet (지도) -->
   <link
@@ -22,14 +25,7 @@
   ></script>
 </head>
 <body>
-  <nav class="nav">
-    <a href="#" class="nav__item">Home</a>
-    <a href="/integ.html" class="nav__item active">통합 정보</a>
-    <a href="#" class="nav__item">커뮤니티</a>
-    <a href="#" class="nav__item">포트폴리오</a>
-    <a href="#" class="nav__item">About</a>
-    <div class="nav__user">000님</div>
-  </nav>
+  <div id="header"></div>
 
   <main class="container">
     <!-- 카드 1: 지도 -->
@@ -146,5 +142,29 @@
       }
     });
   </script>
+
+
+
+<!-- 푸터가 들어갈 자리 -->
+<div id="footer"></div>
+
+<!-- footer.html 동적 삽입 -->
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+<!-- FontAwesome (아이콘용) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+<!-- 로그인 상태 유지용 JS -->
+<script src="session.js"></script>
+
+<!-- 헤더 동적 삽입 -->
+<script src="header.js"></script>
+
 </body>
 </html>

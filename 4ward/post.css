@@ -1,16 +1,7 @@
 body { margin:0; padding:0; font-family:'Noto Sans KR',sans-serif; background:#f4f4f9; color:#222; }
-.nav {
-  display:flex; align-items:center; gap:2rem; background:#fff; border-bottom:1px solid #eee; height:54px;
-  padding:0 2.5rem; font-size:1.05rem;
-}
-.logo { font-size:1.5rem; font-weight:700; margin-right:2.5rem; }
-.nav__user { margin-left:auto; color:#888; }
-.nav__user__icon { background:#e4e4ee; padding:3px 7px; border-radius:50%; }
-.nav a { color:#222; text-decoration:none; font-weight:500; padding:0 7px; }
-.nav a.active { font-weight:700; border-bottom:2px solid #5c4ce3; }
 
 .post-main { display:flex; gap:2.8rem; padding:3%; margin:2.7rem auto 0; min-height:650px;}
-.post-filter { width:400px; background:#fff; border-radius:8px; padding:1.5rem 1.2rem 1.2rem; border:1px solid #ececec; }
+.post-filter { width:280px; background:#fff; border-radius:8px; padding:1.5rem 1.2rem 1.2rem; border:1px solid #ececec; }
 .filter-category strong { display:block; margin-bottom:0.8rem; }
 .cat-icon { font-size:1.08em; margin-right:7px; }
 .filter-category div { margin-bottom:0.45rem; font-size:1rem; color:#444;}
@@ -25,10 +16,11 @@ body { margin:0; padding:0; font-family:'Noto Sans KR',sans-serif; background:#f
 .user-icon { width:42px; height:42px; background:#e7e7ee; border-radius:50%; display:flex;align-items:center; justify-content:center; font-size:1.6rem;}
 .author-name { font-size:1.12rem; font-weight:600; }
 .created-time { font-size:0.94rem; color:#888; margin-top:2px;}
+.viewCount { font-size:0.94rem; color:#888; margin-top:2px;}
 .post-content { background:#f6f7fa; border-radius:13px; padding:1.05rem 1.3rem 0.75rem 1.3rem; margin-bottom:1.2rem;}
 .post-title { font-size:1.33rem; font-weight:700; margin-bottom:0.22em; color:#2b2472; }
 .post-body { font-size:1.06rem; color:#333;}
-.post-more { color:#5c4ce3; font-size:0.99em; cursor:pointer; margin-left:6px;}
+.post-more { color:#1e1e22; font-size:0.99em; cursor:pointer; margin-left:6px;}
 .post-meta-row { font-size:1.06rem; color:#888; margin-bottom:0.8rem; margin-top:0.2rem;}
 .meta-divider { margin:0 0.7em;}
 .meta-comment { color:#5c4ce3; font-weight:600; }
@@ -46,3 +38,73 @@ body { margin:0; padding:0; font-family:'Noto Sans KR',sans-serif; background:#f
 .send-btn { background:#222; color:#fff; border:none; border-radius:999px; padding:0.52em 1.6em; font-size:1.04rem; cursor:pointer; margin-left:0.6rem;}
 .send-btn:hover { background:#5c4ce3; }
 .footer { text-align:center; color:#999; font-size:0.98rem; padding:2.5rem 0 1.1rem 0; }
+.edit-btn {
+  background: #5c4ce3;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.edit-btn:hover {
+  background: #4a3bbc;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-overlay { display: none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(50,50,80,0.19); z-index:100; align-items: center; justify-content:center; }
+.modal-overlay.show { display: flex; }
+.modal { background:#fff; padding:2rem 2.6rem; border-radius:13px; min-width:340px; position:relative; box-shadow: 0 2px 16px rgba(80,90,160,0.09);}
+.modal-close { position: absolute; top:1.1rem; right:1.2rem; background:none; border:none; font-size:1.6rem; color:#bbb; cursor:pointer; }
+.post-form .img-preview { text-align:center; margin-bottom:1.3rem; }
+.post-form .img-preview img { width:320px; height:120px; object-fit:cover; border-radius:7px; background:#eceaf3; }
+
+.category-checkboxes { display:flex; gap:1rem; justify-content: center; margin-bottom: 0.7rem;}
+.post-form input[type="text"], .post-form textarea {
+  width:100%; padding:0.8em 1em; border:1.5px solid #e7e7ee; border-radius:8px; margin-bottom:1.1em; font-size:1.09rem;
+  background: #f9faff;
+}
+.form__btns { text-align:right; }
+.form__btns button { background: #222; color: #fff; padding:0.7em 1.3em; border-radius:8px; font-size:1.08rem; border:none; cursor:pointer;}
+.form__btns button:hover { background: #5c4ce3; }
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 0.6rem;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+.post-actions {
+  display: flex;
+  gap: 0.6rem;         /* 버튼 간격 */
+  margin-top: 1rem;
+  align-items: center;
+}

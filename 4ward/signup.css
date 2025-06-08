@@ -1,0 +1,153 @@
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px 100px;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.switch-btn {
+  background-color: #888;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: none;
+  margin-top: 50px;
+  margin-bottom: -30px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-box {
+  background-color: #fff;
+  padding: 100px 100px 100px;
+  border-radius: 20px;
+  width: 440px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.06);
+  text-align: center;
+  margin-top: 100px;
+}
+
+.form-box h4 {
+  font-size: 20px;
+  color: #777;
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+
+.form-box h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 70px;
+}
+
+.form-box input {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 14px 16px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f6f7f9;
+  text-align: left;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px 0;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #222;
+}
+
+.switch-text {
+  margin-top: 100px;
+  font-size: 14px;
+  color: #666;
+}
+
+.switch-text a {
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* 크기 조정 */
+@media screen and (max-width: 1440px) {
+  .form-section {
+    padding: 40px 20px 80px;
+  }
+
+  .switch-btn {
+    margin-top: 40px;
+    margin-bottom: -20px;
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+
+  .form-box {
+    width: 360px;
+    padding: 80px 60px;
+    margin-top: 80px;
+  }
+
+  .form-box h4 {
+    font-size: 18px;
+    margin-top: -16px;
+    margin-bottom: -16px;
+  }
+
+  .form-box h2 {
+    font-size: 34px;
+    margin-bottom: 50px;
+  }
+
+  .form-box input {
+    max-width: 320px;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 12px 0;
+    font-size: 15px;
+  }
+
+  .switch-text {
+    margin-top: 80px;
+    font-size: 13px;
+  }
+
+  .form-box select {
+    max-width: 320px;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}
+
+#major, #year, #semester {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px 12px;
+  height: 40px;                 /* 🔥 input과 정확히 높이 맞춤 */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f6f7f9;
+  text-align: left;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+}

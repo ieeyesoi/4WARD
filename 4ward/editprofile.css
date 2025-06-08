@@ -1,0 +1,95 @@
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px 100px;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.form-box {
+  background-color: #fff;
+  padding: 100px 100px 100px;
+  border-radius: 20px;
+  width: 440px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.06);
+  text-align: center;
+  margin-top: 100px;
+}
+
+.form-box h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 70px;
+}
+
+.form-box label {
+  display: block;
+  text-align: left;
+  margin: 0 auto 5px;
+  max-width: 400px;
+  font-weight: 600;
+}
+
+.form-box input,
+.form-box select {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 14px 16px;          /* ✅ input과 동일하게 */
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f6f7f9;
+  text-align: left;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.submit-btn {
+  width: 100%;
+  max-width: 400px;
+  padding: 14px 0;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 auto;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #222;
+}
+
+/* 반응형 */
+@media screen and (max-width: 1440px) {
+  .form-section {
+    padding: 40px 20px 80px;
+  }
+
+  .form-box {
+    width: 360px;
+    padding: 80px 60px;
+    margin-top: 80px;
+  }
+
+  .form-box h2 {
+    font-size: 34px;
+    margin-bottom: 50px;
+  }
+
+  .form-box input,
+  .form-box select {
+    max-width: 320px;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 12px 0;
+    font-size: 15px;
+  }
+}

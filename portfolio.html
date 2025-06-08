@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CBNU SW 포털 - 포트폴리오</title>
+  <link rel="stylesheet" href="board.css">
+</head>
+<body>
+  <nav class="nav">
+    <span class="logo">CBNU SW <small>포털</small></span>
+    <a href="board.html">통합 정보</a>
+    <a href="schedule.html">일정 관리</a>
+    <a href="community.html">커뮤니티</a>
+    <a href="#" class="active">포트폴리오</a>
+    <a href="#">About</a>
+    <span class="nav__user">000님 <span class="nav__user__icon">👤</span></span>
+  </nav>
+
+  <main class="board-main">
+    <aside class="board-filter">
+      <div class="filter-title">Filters</div>
+      <div class="filter-category">
+        <strong>Category</strong>
+        <label><input type="checkbox" checked> 웹</label>
+        <label><input type="checkbox" checked> 앱</label>
+        <label><input type="checkbox" checked> 게임</label>
+        <label><input type="checkbox" checked> 개인</label>
+        <label><input type="checkbox" checked> 팀프로젝트</label>
+      </div>
+    </aside>
+
+    <section class="board-list-section">
+      <div class="board-list-header">
+        <input type="text" placeholder="🔍 Search" class="search-input">
+        <button class="write-btn" id="writeBtn">+ 작성하기</button>
+      </div>
+      <div class="portfolio-grid" id="portfolioGrid">
+        </div>
+      <div class="pagination">
+        <button disabled>&lt;</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <span>...</span>
+        <button>10</button>
+        <button>&gt;</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">×</button>
+      <h2>포트폴리오 등록하기</h2>
+      <form id="portfolioForm" class="post-form">
+        <div class="img-preview">
+          <img id="previewImage" src="https://placehold.co/350x180?text=이미지" alt="미리보기" />
+        </div>
+        <div class="upload-img">
+          <label for="imageUpload">이미지 업로드:</label>
+          <input type="file" id="imageUpload" accept="image/*">
+        </div>
+        <div class="category-checkboxes">
+          <label><input type="checkbox" name="portfolioCategory" value="웹"> 웹</label>
+          <label><input type="checkbox" name="portfolioCategory" value="앱"> 앱</label>
+          <label><input type="checkbox" name="portfolioCategory" value="게임"> 게임</label>
+          <label><input type="checkbox" name="portfolioCategory" value="개인"> 개인</label>
+          <label><input type="checkbox" name="portfolioCategory" value="팀프로젝트"> 팀프로젝트</label>
+        </div>
+        <input type="text" id="portfolioTitle" placeholder="제목" required>
+        <input type="text" id="portfolioAuthor" placeholder="제작자" required>
+        <div style="display:flex; gap: 1rem; margin-bottom: 1.1em;">
+          <select id="portfolioLanguage" style="flex:1; padding:0.8em 1em; border:1.5px solid #e7e7ee; border-radius:8px; font-size:1.09rem; background: #f9faff;">
+            <option value="">사용한 언어</option>
+            <option value="HTML/CSS/JS">HTML/CSS/JS</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="C++">C++</option>
+            <option value="Kotlin">Kotlin</option>
+            <option value="Swift">Swift</option>
+            <option value="React">React</option>
+            <option value="Vue">Vue</option>
+            <option value="Node.js">Node.js</option>
+            </select>
+          <input type="date" id="portfolioDate" style="flex:1; padding:0.8em 1em; border:1.5px solid #e7e7ee; border-radius:8px; font-size:1.09rem; background: #f9faff;">
+        </div>
+        <input type="text" id="portfolioGithub" placeholder="GitHub 링크 (선택 사항)">
+        <input type="text" id="portfolioTags" placeholder="태그 (쉼표로 구분)">
+        <textarea id="portfolioDescription" placeholder="작성하고 싶은 세부 내용" rows="8" required></textarea>
+        <div class="form__btns">
+          <button type="submit">완료 →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="detailModalOverlay" class="modal-overlay hidden">
+    <div class="portfolio-detail-modal">
+      <button class="modal-close" id="detailModalClose">×</button>
+      <div class="detail-image-main" id="detailMainImageContainer">
+        <img id="detailMainImage" src="https://placehold.co/600x280?text=이미지" alt="Main Portfolio Image">
+      </div>
+      <div class="detail-thumbnails" id="detailThumbnailsContainer">
+        </div>
+
+      <div class="detail-info-row">
+        <strong>작성자</strong>
+        <span id="detailAuthor"></span>
+        <span style="margin-left: auto;"></span> <span id="detailPostTime"></span> </div>
+      <div class="detail-info-row">
+        <strong>사용한 언어</strong>
+        <span id="detailLanguage"></span>
+        <strong>제작일</strong>
+        <span id="detailDate"></span>
+        <strong>GitHub</strong>
+        <span id="detailGithub"></span>
+      </div>
+      <div class="detail-info-row">
+        <strong>해시태그</strong>
+        <span id="detailTags"></span>
+      </div>
+
+      <div class="detail-description-title">Description</div>
+      <div class="detail-description-content" id="detailDescription">
+        </div>
+
+      <div class="detail-comments">
+        <div id="detailCommentCount"></div> <div id="detailCommentsList">
+          </div>
+        <div class="detail-comment-input">
+          <input type="text" id="commentInput" placeholder="댓글을 입력하세요">
+          <button id="submitCommentBtn">➡️ 보내기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="portfolio.js"></script>
+</body>
+</html>

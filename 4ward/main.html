@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>CBNU SW 포털 - 메인</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="footer.css" /> <!-- ★푸터 CSS 링크 추가 -->
+</head>
+<body>
+  <div id="header"></div>
+  
+  <!-- 메인 콘텐츠... -->
+  <section class="main-top-section">
+  <div class="intro-left">
+    <h1>충북대학교<br/>소프트웨어학부</h1>
+    <p>
+      S O F T W A R E <br />
+      미래 소프트피아 구현을 선도하는 전문 인재양성<br />
+      충북대학교 소프트웨어학부 학생을 위한 통합 플랫폼
+    </p>
+    <a class="go-btn" href="https://software.cbnu.ac.kr/" target="_blank">홈페이지 바로가기</a>
+  </div>
+  <div class="intro-right">
+    <div class="main-card">
+      <div class="major-box">
+        <img src="ai-icon.png" alt="AI" />
+        <span>인공지능 전공</span>
+      </div>
+      <div class="major-box">
+        <img src="sw-icon.png" alt="SW" />
+        <span>소프트웨어 전공</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="main-cards">
+  <div class="card">
+    <img src="portfolio.png" alt="포트폴리오 아이콘" />
+    <h3>최신 포트폴리오 게시글</h3>
+    <div class="card-content">
+      <p><strong></strong></p>
+      <p><strong></strong></p>
+      <p class="card-body"></p>
+    </div>
+    <button id="portfolio-more">전체 보기</button>
+  </div>
+
+  <div class="card">
+    <img src="community.png" alt="커뮤니티 아이콘" />
+    <h3>최신 커뮤니티 게시글</h3>
+    <div class="card-content">
+      <p><strong></strong></p>
+      <p><strong></strong></p>
+      <p class="card-body"></p>
+    </div>
+    <button id="community-more">전체 보기</button>
+  </div>
+
+  <div class="card">
+    <img src="dday.png" alt="D-DAY 아이콘" />
+    <h3>D-DAY 일정</h3>
+    <div class="card-content">
+      <p><strong></strong></p>
+      <p><strong></strong></p>
+      <p class="card-body"></p>
+    </div>
+    <button id="schedule-more">전체 보기</button>
+  </div>
+</section>
+
+
+
+
+  <!-- ✅ footer 추가 -->
+<!-- 푸터가 들어갈 자리 -->
+<div id="footer"></div>
+
+<!-- footer.html 동적 삽입 -->
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+<script src="main.js"></script>
+<!-- FontAwesome (아이콘용) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+<!-- 로그인 상태 유지용 JS -->
+<script src="session.js"></script>
+
+<!-- 헤더 동적 삽입 -->
+<script src="header.js"></script>
+
+</body>
+</html>

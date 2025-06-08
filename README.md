@@ -44,17 +44,13 @@ PM 이예솔 | yesol4138@chungbuk.ac.kr
 
 ### 🚀 작업 방식
 
-1. 모든 팀원은 각자 GitHub에서 해당 local repository를 Fork합니다.
-2. 자신의 Fork된 저장소를 로컬로 Clone합니다.
+1. 모든 팀원은 각자 GitHub에서 초대받은 4WARD 팀의 local repository를 Fork합니다.
+2. 자신의 Fork된 저장소를 local로 Clone합니다.
      git clone http://gitgub.com/팀원계정명/4WARD.git
 4. **자신의 브랜치에서만 작업**합니다.
-     git checkout -b 자신의_브랜치명
-     git add .
-     git commit -m "[#이슈 번호] 자신의 이름, 작업 내용 설명"
-5. 작업 내용을 자신의 Fork로 Push합니다.
-     git push origin 자신의_브랜치명
-7. `git pull origin main`으로 최신 상태를 자주 반영합니다.
-8. 작업이 완료되면 **PR(Pull Request)**을 생성해 로컬 레포지터리의 브랜치로 병합 요청합니다.
+5. 작업 내용을 Fork해간 자신의 repository로 Push합니다.
+7. `git pull origin main`와 'Sync Fork'로 최신 상태를 자주 반영합니다.
+8. 작업이 완료되면 **PR(Pull Request)**을 생성해 4WARD 팀의 local repository branch로 병합 요청합니다.
 9. PR은 팀원 1인 이상의 확인(리뷰) 후 병합합니다.
 
 ---
@@ -81,23 +77,43 @@ PM 이예솔 | yesol4138@chungbuk.ac.kr
 ### 💻 커밋 & PR 규칙
 
 - **의미 있는 커밋 메시지 작성**을 권장합니다.
-  - 예: `feat: 리소스 페이지 UI 구현`, `fix: 버튼 정렬 오류 수정`
+  - 예: `(#이슈번호) [본인 이름]`
 - PR 제목은 명확하게 작성하며, 설명에는 변경 사항 요약을 포함합니다.
+- PR 시 PM이 등록해 둔 PR 팀플릿을 반드시 작성해 작업 내용을 명확히 합니다. 
 
 ---
 
 ### 🧭 예시 워크플로우
 
 ```bash
-# 1. 브랜치 생성 (최초 1회)
-git checkout -b seoyoung
+# 1. 브랜치 생성 (최초 1회) - PM이 담당
+git checkout -b yesol
 
-# 2. 작업 & 커밋
+# 2. 내 레포지토리 git clone
+cd /c/projects
+git clone https://github.com/ieeyesoi/4WARD.git
+cd 4WARD
+git status
+
+#3. 원본 저장소 연결
+git remote add upstream https://github.com/ieeyesoi/4WARD.git
+git remote -v
+-> 출력 예시
+	origin    https://github.com/본인계정명/4WARD.git (fetch)
+	origin    https://github.com/본인계정명/4WARD.git (push)
+	upstream  https://github.com/ieeyesoi/4WARD.git (fetch)
+	upstream  https://github.com/ieeyesoi/4WARD.git (push)
+
+# 4. 작업 브랜치 설정
+git fetch upstream
+git checkout yesol
+git branch
+	
+# 5. 작업 & 커밋
+git status
 git add .
-git commit -m "feat: 강의정보 페이지 구현"
+git commit -m "(#이슈번호) [본인 이름]"
+git push origin 본인 이름
 
-# 3. push
-git push origin seoyoung
-
-# 4. PR 생성 → main 브랜치로 병합 요청
+# 6. PR 생성 → main 브랜치로 병합 요청
 

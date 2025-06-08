@@ -3,22 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>CBNU SW 포털 - 게시글 상세</title>
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="footer.css">
   <link rel="stylesheet" href="post.css">
 </head>
 <body>
-  <!-- 상단 네비게이션 -->
-  <nav class="nav">
-    <span class="logo">CBNU SW <small>포털</small></span>
-    <a href="#">Home</a>
-    <a href="#">통합 정보</a>
-    <a href="#" class="active">커뮤니티</a>
-    <a href="#">포트폴리오</a>
-    <a href="#">About</a>
-    <span class="nav__user">000님 <span class="nav__user__icon">👤</span></span>
-  </nav>
+  <div id="header"></div>
 
   <main class="post-main">
-    <!-- 왼쪽 카테고리 필터 -->
     <aside class="post-filter">
       <div class="filter-category">
         <strong>Category</strong>
@@ -28,41 +20,88 @@
       </div>
     </aside>
 
-    <!-- 게시글 상세/댓글 -->
     <section class="post-detail-section">
-      <!-- 게시글 이미지 -->
       <div class="post-img-preview">
         <img src="https://placehold.co/540x200?text=이미지" alt="썸네일" />
       </div>
-      <!-- 작성자, 타이틀, 본문 -->
       <div class="post-author-row">
         <div class="user-icon">👤</div>
         <div>
           <div class="author-name">작성자</div>
           <div class="created-time">1분 전 작성됨</div>
+          <span id="viewCount" class="viewCount">조회수: 0</span> <!-- ✅ 이 줄 추가 -->
         </div>
       </div>
       <div class="post-content">
-        <div class="post-title">[카테고리] 제목</div>
-        <div class="post-body">본문 내용... <span class="post-more">더보기</span></div>
+        <div class="post-title"></div>
+        <div class="post-body"></div>
       </div>
+
+      <!-- 수정 버튼 -->
+      <div class="post-actions">
+        <button id="editBtn" class="edit-btn">
+          <i class="fas fa-pen"></i> 수정
+        </button>
+        <button id="deleteBtn" class="delete-btn">
+          <i class="fas fa-trash-alt"></i> 삭제
+        </button>
+      </div>
+
+      <!-- ✅ 글 수정 모달 (글 작성과 동일한 구성) -->
+      <div id="editModalOverlay" class="modal-overlay hidden">
+        <div class="modal">
+          <button id="editModalClose" class="modal-close">×</button>
+          <h2>글 수정하기</h2>
+          <form id="editForm" class="post-form">
+            <div class="img-preview">
+              <img id="previewImage" src="https://placehold.co/350x140?text=이미지" alt="미리보기" />
+            </div>
+            <div class="upload-img">
+              <label for="imageUpload">이미지 수정:</label>
+              <input type="file" id="imageUpload" accept="image/*">
+            </div>
+            <div class="category-checkboxes">
+              <label><input type="checkbox" value="스터디 모집" /> 스터디 모집</label>
+              <label><input type="checkbox" value="팀원 모집" /> 팀원 모집</label>
+              <label><input type="checkbox" value="자유게시판" /> 자유게시판</label>
+            </div>
+            <input type="text" id="editTitle" placeholder="제목" required />
+            <textarea id="editContent" rows="6" placeholder="수정할 내용을 입력하세요" required></textarea>
+            <div class="form__btns">
+              <button type="submit">수정 완료</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
       <div class="post-meta-row">
-        <span>20개의 댓글</span>
+        <span id="commentCount">댓글 수</span> <!-- 동적으로 바뀔 자리 -->
         <span class="meta-divider">|</span>
         <span class="meta-comment">💬 Comment</span>
       </div>
-      <!-- 댓글 목록 -->
+
       <div id="comments"></div>
-      <!-- 댓글 입력 -->
+
       <form id="commentForm" class="comment-form">
         <input id="commentInput" type="text" placeholder="댓글을 입력하세요" autocomplete="off" />
+        <label><input type="checkbox" id="anonymousCommentCheck">익명</label>
         <button type="submit" class="send-btn">🚀 보내기</button>
       </form>
     </section>
   </main>
-  <footer class="footer">
-    (28644) 충북 청주시 서원구 충대로1, 충북대학교 전자정보대학 소프트웨어학부 S4-1동(전자정보 3관) 217호
-  </footer>
+
+  <div id="footer"></div>
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
   <script src="post.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+  <script src="session.js"></script>
+  <script src="header.js"></script>
 </body>
 </html>
