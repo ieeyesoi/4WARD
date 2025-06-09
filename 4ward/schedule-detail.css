@@ -1,0 +1,87 @@
+/* schedule-detail.css */
+
+/* 전체 메인 컨테이너 */
+.schedule-detail-container {
+  max-width: 640px;
+  margin: 60px auto 100px;    /* 위 60, 아래 100 */
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 제목 */
+#scheduleTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* 설명 */
+#scheduleDesc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin-bottom: 24px;
+  white-space: pre-wrap;  /* 줄바꿈 유지 */
+}
+
+/* 남은 시간 */
+.time-remaining {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #e67e22;           /* 주황 계열로 강조 */
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* 일정 삭제 버튼 */
+.delete-btn {
+  display: block;
+  margin: 0 auto;
+  background-color: #e74c3c;   /* 빨강 */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(231, 78, 60, 0.3);
+}
+
+/* 버튼 호버 */
+.delete-btn:hover {
+  background-color: #c0392b;
+  box-shadow: 0 6px 16px rgba(192, 57, 43, 0.4);
+}
+/* 아이콘 간격 */
+.delete-btn i {
+  margin-right: 8px;
+}
+
+/* 반응형: 좁은 화면 */
+@media (max-width: 480px) {
+  .schedule-detail-container {
+    margin: 40px 16px 80px;
+    padding: 24px;
+  }
+  #scheduleTitle {
+    font-size: 1.75rem;
+  }
+  #scheduleDesc {
+    font-size: 1rem;
+  }
+  .time-remaining {
+    font-size: 1.1rem;
+  }
+  .delete-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
