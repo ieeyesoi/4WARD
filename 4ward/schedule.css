@@ -42,7 +42,7 @@ body {
   width: 100%;
   min-height: 120px;
   margin-bottom: 1.5rem;
-  background-color: #ebebeb;
+  background-color: #f8faff;
   border-radius: 20px;
   padding: 1%;
 }
@@ -73,7 +73,7 @@ body {
 }
 .event-card .dday {
   font-weight: bold;
-  color: #5c4ce3;
+  color: #4c65e3;
   margin-bottom: 0.5rem;
   font-size: 2rem;
 }
@@ -92,7 +92,7 @@ body {
   flex: 0 0 30rem;
   width: 100%;
   height: 100%;
-  background-color: #ebebeb;
+  background-color: #f8faff;
   border-radius: 14px;
   padding: 1.3rem;
   box-shadow: 0 2px 10px rgba(80,90,130,0.03);
@@ -164,7 +164,7 @@ body {
 .timeline-view {
   flex: 1 1 0;
   min-width: 0;
-  background-color: #ebebeb;
+  background-color: #f8faff;
   border-radius: 14px;
   padding: 1.3rem 2rem 2.5rem 2rem;
   box-shadow: 0 2px 10px rgba(80,90,130,0.03);
@@ -184,7 +184,7 @@ body {
 }
 .btn, .nav-btn {
   background-color: #b0b0b0;
-  color: #242424;
+  color: #5c5c5c;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
@@ -194,7 +194,7 @@ body {
   transition: background .13s;
 }
 .btn:hover, .nav-btn:hover {
-  background: #454545;
+  background: #d8e1ff;
 }
 .week-days {
   display: flex;
@@ -215,7 +215,7 @@ body {
   margin: 0 2px;
 }
 .weekday-today {
-  background-color: #1b72ce !important;
+  background-color: #e0efff !important;
   color: #fff !important;
   font-weight: bold;
 }
@@ -258,7 +258,7 @@ body {
   left: 5rem; /* 시간 라벨 우측에 나오게 */
   width: 13%;
   min-width: 80px;
-  background: #9a9a9a;
+  background: #d2ebff;
   color: #373737;
   border-radius: 8px;
   font-size: 1.5rem;
@@ -310,6 +310,6 @@ body {
 .form__btns { text-align: right; margin-top: 1.5em;}
 .form__btns button {
   padding: 0.55em 1.4em; border: none;
-  background: #5c4ce3;
+  background: #4c56e3;
   color: #fff; border-radius: 8px; cursor: pointer; font-size: 1rem;
 }

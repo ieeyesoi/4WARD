@@ -1,0 +1,119 @@
+{
+  "genEd": {
+    "categories": [
+      {
+        "name": "개신기초교양",
+        "subcategories": [
+          { "name": "인성과 비판적 사고", "minCredits": 3, "possibleCourses": [{"code":"0911001"},{"code":"0911002"}] },
+          { "name": "의사소통",           "minCredits": 3, "possibleCourses": [] },
+          { "name": "영어",               "minCredits": 6, "possibleCourses": [] },
+          { "name": "정보문해",           "minCredits": 6, "possibleCourses": [] }
+        ],
+        "totalMinCredits": 18
+      },
+      {
+        "name": "일반교양",
+        "fields": {
+          "인간과 문화":    { "minCourses": 1, "possibleCourses": [{"code":"0921003"},{"code":"0921004"},{"code":"0921005"},{"code":"0921006"},{"code":"0921007"},{"code":"0921008"},{"code":"0921009"},{"code":"0921010"},{"code":"0921011"},{"code":"0921012"},{"code":"0921013"},{"code":"0921014"},{"code":"0921015"},{"code":"0921016"},{"code":"0921017"},{"code":"0921018"},{"code":"0921019"},{"code":"0921020"},{"code":"0921021"},{"code":"0921022"},{"code":"0921023"},{"code":"0921024"},{"code":"0921025"},{"code":"0921026"},{"code":"0921027"},{"code":"0921028"},{"code":"0921029"},{"code":"0921030"},{"code":"0921031"},{"code":"0921032"},{"code":"0921033"},{"code":"0921034"},{"code":"0921036"},{"code":"0921037"},{"code":"0921038"},{"code":"0921041"},{"code":"0921043"},{"code":"0921044"},{"code":"0921045"},{"code":"0921046"},{"code":"0921047"},{"code":"0921049"},{"code":"0921050"},{"code":"0921056"},{"code":"0921057"},{"code":"0921059"},{"code":"0921060"},{"code":"0921061"},{"code":"0921062"},{"code":"0921064"}] },
+          "사회와 역사":    { "minCourses": 1, "possibleCourses": [{"code":"0922001"},{"code":"0922002"},{"code":"0922003"},{"code":"0922004"},{"code":"0922005"},{"code":"0922006"},{"code":"0922007"},{"code":"0922008"},{"code":"0922010"},{"code":"0922011"},{"code":"0922033"},{"code":"0922043"},{"code":"0922048"},{"code":"0922061"}] },
+          "자연과 과학":    { "minCourses": 1, "possibleCourses": [{"code":"0923016"},{"code":"0923017"},{"code":"0923019"},{"code":"0923021"},{"code":"0923022"},{"code":"0923034"}] },
+          "필수공업법규와창업": { "minCourses": 1, "possibleCourses": [{"code":"0914002"}] }
+        },
+        "totalMinCredits": 9
+      },
+      {
+        "name": "확대교양",
+        "fields": {
+          "미래융복합": { "minCourses": 1, "possibleCourses": [{"code":"0931010"},{"code":"0931016"},{"code":"0931017"}] },
+          "국제화":     { "minCourses": 1, "possibleCourses": [{"code":"0932012"},{"code":"0932013"},{"code":"0932024"},{"code":"0932028"},{"code":"0932029"}] },
+          "예술과 체육": { "minCourses": 1, "possibleCourses": [{"code":"0934003"},{"code":"0934004"}] }
+        },
+        "totalMinCredits": 3
+      },
+      {
+        "name": "자연이공계기초과학",
+        "courses": [
+          { "code": "5118001" },
+          { "code": "5118014" },
+          { "code": "5118018" }
+        ],
+        "totalMinCredits": 12
+      }
+    ],
+    "grandTotalCredits": 42
+  },
+  "major": {
+    "SoftwareEngineering": {
+      "coreRequired": {
+        "minCredits": 28,
+        "courses": [
+          { "code": "5118001", "name": "이산수학",        "credits": 3 },
+          { "code": "5118003", "name": "컴퓨터시스템개론", "credits": 3 },
+          { "code": "5118004", "name": "오픈소스소프트웨어이해와실습", "credits": 3 },
+          { "code": "5118006", "name": "자료구조",        "credits": 3 },
+          { "code": "5118007", "name": "컴퓨터구조",        "credits": 3 },
+          { "code": "5118013", "name": "알고리즘",        "credits": 3 },
+          { "code": "5118020", "name": "운영체제",        "credits": 3 },
+          { "code": "5118021", "name": "객체지향설계",    "credits": 3 },
+          { "code": "5118024", "name": "산학프로젝트",    "credits": 2 },
+          { "code": "5118030", "name": "캡스톤디자인",    "credits": 2 }
+        ]
+      },
+      "electives": {
+        "minCredits": 50,
+        "courses": [
+          { "code": "5118002", "name": "미래설계탐색",   "credits": 1 },
+          { "code": "5118005", "name": "미래설계준비",   "credits": 1 },
+          { "code": "5118008", "name": "소프트웨어실전영어", "credits": 3 },
+          { "code": "5118009", "name": "객체지향프로그래밍", "credits": 3 },
+          { "code": "5118010", "name": "선형대수학",     "credits": 3 },
+          { "code": "5118011", "name": "미래설계구현",   "credits": 3 },
+          { "code": "5118012", "name": "오픈소스기초프로젝트", "credits": 2 },
+          { "code": "5118014", "name": "프로그래밍언어론", "credits": 3 },
+          { "code": "5118015", "name": "시스템소프트웨어", "credits": 3 },
+          { "code": "5118016", "name": "창업탐색",       "credits": 1 },
+          { "code": "5118017", "name": "오픈소스개발프로젝트", "credits": 2 },
+          { "code": "5118018", "name": "확률및통계",     "credits": 3 },
+          { "code": "5118019", "name": "컴퓨터그래픽스", "credits": 3 },
+          { "code": "5118022", "name": "컴퓨터네트워크", "credits": 3 },
+          { "code": "5118023", "name": "창업기획",       "credits": 1 },
+          { "code": "5118025", "name": "창업설계",       "credits": 1 },
+          { "code": "5118026", "name": "데이터베이스시스템", "credits": 3 },
+          { "code": "5118031", "name": "임베디드시스템", "credits": 3 },
+          { "code": "5100012", "name": "창업산학초청세미나I", "credits": 1 },
+          { "code": "5118033", "name": "알고리즘과문제해결기법", "credits": 3 },
+          { "code": "5118037", "name": "창업파일럿프로젝트", "credits": 2 },
+          { "code": "5100013", "name": "창업산학초청세미나II", "credits": 1 },
+          { "code": "5118040", "name": "병렬컴퓨팅",     "credits": 3 }
+        ]
+      },
+      "totalMinCredits": 78
+    },
+    "ArtificialIntelligence": {
+      "coreRequired": {
+        "minCredits": 3,
+        "courses": [
+          { "code": "5119004", "name": "인공지능",      "credits": 3 }
+        ]
+      },
+      "electives": {
+        "minCredits": 35,
+        "courses": [
+          { "code": "5119001", "name": "오픈소스AI웹소프트웨어", "credits": 3 },
+          { "code": "5119002", "name": "AI오픈소스전문프로젝트", "credits": 2 },
+          { "code": "5119003", "name": "인공지능수학",     "credits": 3 },
+          { "code": "5119005", "name": "소프트웨어공학",   "credits": 3 },
+          { "code": "5119006", "name": "정보검색",         "credits": 3 },
+          { "code": "5119007", "name": "VRARGAME이론및실제", "credits": 3 },
+          { "code": "5119008", "name": "기계학습",         "credits": 3 },
+          { "code": "5119009", "name": "컴퓨터비전",       "credits": 3 },
+          { "code": "5119010", "name": "데이터사이언스",     "credits": 3 },
+          { "code": "5119011", "name": "자연언어처리",     "credits": 3 },
+          { "code": "5119012", "name": "딥러닝이론및실습",  "credits": 3 },
+          { "code": "5119013", "name": "인공지능시스템응용", "credits": 3 }
+        ]
+      },
+      "totalMinCredits": 38
+    }
+  }
+}

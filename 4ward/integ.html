@@ -4,21 +4,24 @@
   <meta charset="UTF-8">
   <title>통합 정보</title>
   <link rel="stylesheet" href="style.css">
+<<<<<<< Updated upstream
+=======
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="footer.css">
+>>>>>>> Stashed changes
 
   <!-- Leaflet (지도) -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-sA+4OYeH2FgkSuUQIO75UDjOvZW+3S26U3Wxj6uAn0I="
-    crossorigin=""
+
   />
   <!-- Chart.js (차트) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
   <!-- Leaflet JS -->
   <script
     src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-QVYRnvE89NV9Os2wHS8YJ1jPvQUF8g1m0rnz30AkZbM="
-    crossorigin=""
+
   ></script>
 </head>
 <body>
@@ -37,25 +40,28 @@
       <header class="card__hdr"><h3>강의 정보 확인</h3></header>
       <div id="map" class="card__body card__body--map"></div>
       <footer class="card__ftr">
-        <a href="/lectureroom.html"><button class="btn">자세히 보기</button></a>
+        <a href="lectureroom.html"><button class="btn">자세히 보기</button></a>
       </footer>
     </section>
 
     <section class="card">
-    <header class="card__hdr"><h3>졸업 요건 점검</h3></header>
-    <div class="card__body card__body--chart">
-        <canvas id="gradChart"></canvas>
-    </div>
-    <footer class="card__ftr">
-        <a 
-        href="https://eisn.cbnu.ac.kr/nxui/index.html?OBSC_YN=0&LNG=ko#14295" 
-        class="btn" 
-        target="_blank" 
-        rel="noopener"
-        >
-        홈페이지 바로가기
-        </a>
-    </footer>
+      <header class="card__hdr"><h3>졸업 요건 점검</h3></header>
+      <div class="card__body card__body--chart">
+          <canvas id="gradChart"></canvas>
+      </div>
+      <footer class="card__ftr">
+          <a 
+          href="https://eisn.cbnu.ac.kr/nxui/index.html?OBSC_YN=0&LNG=ko#14295" 
+          class="btn" 
+          target="_blank" 
+          rel="noopener"
+          >
+          홈페이지 바로가기
+          </a>
+      </footer>
+      <footer class="card__ftr">
+        <a href="graduation.html"><button class="btn">AI로 확인하기</button></a>
+      </footer>
     </section>
     
 
@@ -64,13 +70,9 @@
       <header class="card__hdr"><h3>D-DAY 일정 확인</h3></header>
       <div class="card__body card__body--calendar">
         <ul id="miniCal" class="mini-calendar"></ul>
-        <ul class="legend">
-          <li><span class="dot dot--hw"></span>과제</li>
-          <li><span class="dot dot--exam"></span>시험</li>
-        </ul>
       </div>
       <footer class="card__ftr">
-        <a href="/schedule.html">
+        <a href="schedule.html">
         <button class="btn">자세히 보기</button>
         </a>
       </footer>

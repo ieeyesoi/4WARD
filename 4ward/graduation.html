@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>졸업 요건 계산기</title>
+  <link rel="stylesheet" href="graduation.css" />
+  <link rel="stylesheet" href="header.css" />
+</head>
+<body>
+  <div id="header"></div>
+  <div class="container"> 
+    <h1>졸업 요건 계산기</h1>
+
+    <div class="form-section">
+      <!-- 학번 선택 -->
+      <div class="form-group">
+        <label for="yearSelect">학번 선택</label>
+        <select id="yearSelect">
+          <option value="24">2023학번</option>  
+          <option value="24">2024학번</option>
+          <option value="25">2025학번</option>
+        </select>
+      </div>
+
+      <!-- 전공 선택 -->
+      <div class="form-group">
+        <label for="majorSelect">전공 선택</label>
+        <select id="majorSelect">
+          <option value="SoftwareEngineering">소프트웨어전공</option>
+          <option value="ArtificialIntelligence">인공지능전공</option>
+        </select>
+      </div>
+
+      <!-- 이수 과목 목록 -->
+      <div class="form-group">
+        <label for="courseTextarea">이수 과목 목록</label>
+        <textarea id="courseTextarea" placeholder="예) 5118001 이산수학 3-3-0&#10;5118006 자료구조 3-3-0"></textarea>
+      </div>
+
+      <!-- 계산 버튼 -->
+      <button id="calculateBtn">졸업 요건 계산하기</button>
+    </div>
+
+    <!-- 결과 출력 영역 -->
+    <div id="resultContainer" class="result-container" hidden>
+      <div id="genEdResult" class="result-section"><h3>교양 결과</h3></div>
+      <div id="majorResult" class="result-section"><h3>전공 결과</h3></div>
+      <div id="overallResult" class="result-section"><h3>전체 요건</h3></div>
+    </div>
+
+    <!-- footer -->
+    <footer class="page-footer">
+      본 서비스는 Google AI Studio (Gemini AI)를 활용하였습니다.
+    </footer>
+  </div>
+
+  <script type="module" src="graduation.js"></script>
+
+<!-- FontAwesome (아이콘용) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+<!-- 로그인 상태 유지용 JS -->
+<script src="session.js"></script>
+
+<!-- 헤더 동적 삽입 -->
+<script src="header.js"></script>
+</body>
+</html>

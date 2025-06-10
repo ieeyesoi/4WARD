@@ -1,6 +1,6 @@
 /* reset */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Noto Sans KR', sans-serif; background:#fff; color:#333; }
+body { font-family: 'Noto Sans KR', sans-serif; background: #f4f4f9;; color:#333; }
 
 /* 네비게이션 */
 .nav {
@@ -41,6 +41,13 @@ body { font-family: 'Noto Sans KR', sans-serif; background:#fff; color:#333; }
   padding:1.5rem;
   display:flex; flex-direction:column; align-items:center;
 }
+.card__body--map {
+  width: 80%;
+  height: 300px;    /* 원하는 높이로 조정 */
+  margin-left: 5%;
+  position: relative;
+  overflow: hidden;
+}
 .card__body--map img {
   width:100%; height:180px; object-fit:cover; border-radius:8px;
 }
@@ -80,3 +87,36 @@ body { font-family: 'Noto Sans KR', sans-serif; background:#fff; color:#333; }
   transition: background .2s;
 }
 .btn:hover { background:#f0f0f0; }
+
+/* style.css */
+.mini-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+  width: 80%;
+  box-sizing: border-box;
+}
+
+.mini-calendar li {
+  text-align: center;
+  padding: 5px 0;
+  font-size: 1.0rem;
+  border-radius: 4px;
+  word-wrap: break-word;
+}
+
+/* 오늘 날짜 강조 */
+.mini-calendar li.today {
+  background-color: #3188ff;
+  color: #fff;
+}
+
+/* 요일 헤더(bold) */
+.mini-calendar li strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>CBNU SW 포털 - About</title>
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="board.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="footer.css" /> <!-- ★푸터 CSS 링크 추가 -->
+</head>
+<body>
+  <div id="header"></div>
+  <!-- header.html 내용 -->
+
+
+  <main class="about-container">
+    <!-- Our Story 섹션 -->
+    <section class="about-section">
+      <h2>Our Story</h2>
+      <p>
+        CBNU SW 포털은 충북대학교 소프트웨어학부 학생들을 위한 통합 웹 플랫폼입니다.<br>
+        학생들의 프로젝트 관리, 포트폴리오 공유 등을 한 곳에서 가능하도록 기획되었습니다.
+      </p>
+    </section>
+
+    <!-- Mission 및 서비스 설명 -->
+    <section class="about-section mission-section">
+      <h3>Our Mission</h3>
+      <blockquote>“소프트웨어학부 학생들이 직접 기획하고 설계한 진짜 우리를 위한 플랫폼.”</blockquote>
+      <div class="info-grid">
+        <ul>
+          <li><strong>일정 관리</strong> – 과제, 발표, 시험 D-Day 일정 등록</li>
+          <li><strong>포트폴리오</strong> – 자신의 프로젝트 게시 및 공유</li>
+          <li><strong>커뮤니티</strong> – 자유롭게 소통할 수 있는 게시판</li>
+          <li><strong>통합 정보</strong> – 강의실 정보, 졸업요건 홈페이지 제공</li>
+        </ul>
+        <div class="section-nav">
+          <button type="button" onclick="location.href='schedule.html'">일정 관리로 이동</button>
+          <button type="button" onclick="location.href='portfolio.html'">포트폴리오로 이동</button>
+          <button type="button" onclick="location.href='board.html'">커뮤니티로 이동</button>
+          <button type="button" onclick="location.href='integ.html'">통합 정보로 이동</button>
+        </div>
+      </div>
+
+      <!-- 팀 사진 및 구성원 설명 -->
+      <div class="team-section">
+        <img src="https://placehold.co/140x140?text=Team" alt="Team Photo Placeholder">
+        <div class="team-names">
+          조재영 – UI/UX Design · 허채민 – Backend Developer · 김다민 – Frontend Developer · 이예솔 – PM
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- 푸터가 들어갈 자리 -->
+<div id="footer"></div>
+
+<!-- footer.html 동적 삽입 -->
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+<!-- FontAwesome (아이콘용) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+<!-- 로그인 상태 유지용 JS -->
+<script src="session.js"></script>
+
+<!-- 헤더 동적 삽입 -->
+<script src="header.js"></script>
+
+</body>
+</html>

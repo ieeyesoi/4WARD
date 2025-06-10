@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>포트폴리오 상세보기</title>
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="portfolio-detail.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="portfolio-detail-page">
+    <div class="portfolio-detail-container">
+      <h2 id="detailTitle">포트폴리오 제목</h2>
+
+<div class="detail-image-main" id="detailMainImageContainer">
+  <img
+    id="detailMainImage"
+    src="ai-icon.png"
+    alt="Main Portfolio Image"
+    onerror="this.onerror=null; this.src='ai-icon.png';"
+  >
+</div>
+
+      <div class="detail-info-row"><strong>카테고리</strong>: <span id="detailCategory"></span></div>
+      <div class="detail-info-row"><strong>제작자</strong>: <span id="detailAuthor"></span></div>
+      <div class="detail-info-row"><strong>작성일</strong>: <span id="detailDate"></span></div>
+      <div class="detail-info-row"><strong>사용 언어</strong>: <span id="detailLanguage"></span></div>
+      <div class="detail-info-row"><strong>GitHub</strong>: <span id="detailGithub"></span></div>
+      <div class="detail-info-row"><strong>해시태그</strong>: <span id="detailTags"></span></div>
+
+      <div class="detail-description-title">Description</div>
+      <div class="detail-description-content" id="detailDescription"></div>
+
+      <div class="detail-buttons" id="ownerButtons" style="display: none;">
+        <button id="editBtn"><i class="fas fa-pen"></i> 수정</button>
+        <button id="deleteBtn"><i class="fas fa-trash"></i> 삭제</button>
+      </div>
+
+      <section class="detail-comments">
+        <div id="detailCommentCount"></div>
+        <div id="detailCommentsList"></div>
+        <div class="detail-comment-input">
+          <input type="text" id="commentInput" placeholder="댓글을 입력하세요">
+          <label><input type="checkbox" id="anonymousCheckbox"> 익명</label>
+          <button id="submitCommentBtn">➡️ 보내기</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+
+  <script src="portfolio-detail.js"></script>
+  <script src="header.js"></script>
+  <script src="session.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+</body>
+</html>

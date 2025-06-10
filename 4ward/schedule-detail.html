@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>일정 상세</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="schedule-detail.css" />
+  <link rel="stylesheet" href="footer.css" />
+
+ <style>
+    /* 전체 레이아웃 */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Noto Sans KR", sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+    }
+    /* header, footer 컨테이너 높이 확보 */
+    #header, #footer {
+      width: 100%;
+    }
+
+    /* 메인 카드 */
+    .schedule-detail-container {
+      flex: 1;
+      width: 60%;
+      margin: 60px auto;
+      padding: 32px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    /* 제목 */
+    #scheduleTitle {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 16px;
+    }
+
+    /* 상세 설명 */
+    #scheduleDesc {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: #4a4a4a;
+      margin-bottom: 24px;
+      white-space: pre-wrap;
+    }
+
+    /* 남은 시간 */
+    .time-remaining {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #e67e22;
+      margin-bottom: 32px;
+    }
+
+    /* 삭제 버튼 */
+    .delete-btn {
+      display: inline-flex;
+      align-items: center;
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 12px rgba(231, 78, 60, 0.3);
+    }
+    .delete-btn i {
+      margin-right: 8px;
+    }
+    .delete-btn:hover {
+      background-color: #c0392b;
+      box-shadow: 0 6px 16px rgba(192, 57, 43, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <!-- 🔼 헤더 영역 -->
+  <div id="header"></div>
+
+  <!-- 🔽 메인 콘텐츠 -->
+  <main class="schedule-detail-container">
+    <h1 id="scheduleTitle">일정 제목</h1>
+    <p id="scheduleDesc">상세 설명</p>
+    <div id="remainingTime" class="time-remaining">남은 시간 계산 중...</div>
+    <button id="deleteScheduleBtn" style="display: none;" class="delete-btn">
+  <i class="fas fa-trash-alt"></i> 일정 삭제
+</button>
+
+
+  </main>
+
+  <!-- 🔽 푸터 영역 -->
+  <div id="footer"></div>
+
+  <!-- 스크립트들 -->
+  <script>
+    // header 삽입
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+
+    // footer 삽입
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+
+  <script src="schedule-detail.js"></script>
+  <script src="session.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+</body>
+</html>
